@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Wedding Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+<body>
+    <header>
+        <h1 data-i18n="welcome">Welcome to Our Wedding</h1>
+        <nav>
+            <ul>
+                <li><button id="lang-en">English</button></li>
+                <li><button id="lang-it">Italiano</button></li>
+                <li><button id="lang-gr">Ελληνικά</button></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="#invitation" data-i18n="nav_invitation">Invitation</a></li>
+                <li><a href="#rsvp" data-i18n="nav_rsvp">RSVP</a></li>
+                <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>    
+    <section id="invitation">
+        <h2 data-i18n="invitation_details"data-i18n="invitatio_details">Invitation Details</h2>
+        <p data-i18n="join_us">Join us on our special day!</p>
+        <p><span data-i18n="date">Date</span>: <span id="wedding-date">28/06/2025</span></p>
+        <p><span data-i18n="location">Location</span>: <span id="wedding-location"> Trafalgar Tavern - Park Row, London SE10 9NW</span></p>
+    </section>
+
+    <!-- New Image Container -->
+    <div class="section-image" id="image-invitation"></div>
+
+    <section id="rsvp">
+        <h2 data-i18n="rsvp_header">RSVP</h2>
+        <form id="rsvp-form">
+            <div class="form-group">
+                <label for="participant-names" data-i18n="label_attendees"></label>
+                <input type="text" id="participant-names" name="participant_names" required pattern="^[a-zA-Z ]+$" data-i18n-attr="placeholder:placeholder_attendees, title:title_invalid_attendees">
+                <small class="form-text text-muted" data-i18n="message_attendees"></small>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" data-i18n="label_email"></label>
+                <input type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-i18n-attr="placeholder:placeholder_email, title:title_invalid_email">
+                <small class="form-text text-muted" data-i18n="message_email"></small>
+            </div>
+            
+            <div class="form-group">
+                <label for="adults-number" data-i18n="label_adults"></label>
+                <input type="number" id="adults-number" name="adults_number" required min="1" max="10" data-i18n-attr="title:title_invalid_adults">
+                <small class="form-text text-muted" data-i18n="message_adults"></small>
+            </div>
+            
+            <div class="form-group">
+                <label for="children-number" data-i18n="label_children"></label>
+                <input type="number" id="children-number" name="children_number" min="0" max="10" data-i18n-attr="title:title_invalid_children">
+                <small class="form-text text-muted" data-i18n="message_children"></small>
+            </div>
+            
+            <div class="form-group">
+                <label for="allergies" data-i18n="label_allergies"></label>
+                <textarea id="allergies" name="allergies" pattern="^[a-zA-Z0-9,.?! ]+$" data-i18n-attr="placeholder:placeholder_allergies, title:title_invalid_allergies"></textarea>
+                <small class="form-text text-muted" data-i18n="message_allergies"></small>
+            </div>
+            
+            <div class="form-group">
+                <label for="not-attending" data-i18n="label_not_attending"></label>
+                <input type="checkbox" id="not-attending" name="not_attending">
+                <small class="form-text text-muted" data-i18n="message_not_attending"></small>
+            </div>
+            
+            <button type="submit" class="rsvp-button" data-i18n="submit_rsvp"></button>
+        </form>
+        <div id="loader" class="loader" style="display: none;"></div>
+        <div id="feedback-message"></div>
+    </section>
+
+    <!-- New Image Container -->
+    <div class="section-image" id="image-rsvp"></div>
+
+    <section id="gallery">
+        <h2 data-i18n="gallery">Photo Gallery</h2>
+        <div class="gallery-grid">
+            <!-- Gallery images go here -->
+        </div>
+    </section>
+
+</div>
+
+    <footer>
+        <p data-i18n="footer_thank_you">Thank you for celebrating with us!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

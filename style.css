@@ -1,0 +1,270 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #404040; /* Accessible gray */
+    line-height: 1.6;
+    background-color: #FEF6FB; /* Soft pink */
+}
+
+/* Navigation */
+.menu nav ul {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.menu nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.menu nav ul li a {
+    text-decoration: none;
+    color: #885053; /* Dusty rose */
+    padding: 8px 15px;
+    font-family: 'Parisienne', cursive;
+    transition: color 0.3s ease;
+}
+
+.menu nav ul li a:hover,
+.menu nav ul li a:focus {
+    color: #5cb85c;
+    border-bottom: 3px solid #5cb85c;
+}
+
+/* Header */
+header {
+    background-image: linear-gradient(to bottom, rgba(254, 246, 251, 0.9), rgba(254, 246, 251, 0.5)), url('../images/PXL_20221106_150843270.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 900px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+header a, header button {
+    color: white;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+header > * {
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Parisienne', cursive;
+    font-size: 2.5rem;
+    padding: 0 20px;
+}
+
+/* Section Images Responsiveness */
+.section-image {
+    height: auto; /* Allows for flexible height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: sepia(0.3);
+    width: 100%; /* Ensures the image is always full width */
+}
+
+/* Invitation Section Styling */
+#invitation {
+    text-align: center; /* Center-align the text for a formal look */
+    padding: 40px 20px; /* Add some padding for spacing */
+    background-color: #FFF; /* White background for a clean look */
+    color: #885053; /* Use the dusty rose color for text to match the theme */
+    margin: 40px auto; /* Center the section with some margin */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 10px; /* Slightly rounded corners for a soft look */
+    width: 80%; /* Use percentage to make it responsive */
+    max-width: 1800px; /* Max width to keep the text readable on larger screens */
+}
+
+#invitation h2 {
+    margin-bottom: 25px; /* Spacing below the heading */
+    font-family: 'Parisienne', cursive; /* Cursive font for the heading */
+    font-size: 2.8rem; /* Slightly larger font size for the heading */
+}
+
+#invitation p {
+    font-family: 'Roboto', sans-serif; /* Roboto for paragraph text */
+    font-size: 1.1rem; /* Slightly larger font size for readability */
+    margin-bottom: 15px; /* Spacing between paragraphs */
+}
+
+#image-invitation {
+    background-image: url('../images/homepage-building-full.png');
+    height: 1100px;
+}
+
+#image-rsvp {
+    background-image: url('../images/PXL_20230507_151630348.jpg');
+}
+
+/* Responsive Images */
+#image-invitation, #image-rsvp {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 2;
+    background: #FFF;
+    margin-top: 700px;
+    width: 100%;
+}
+
+/* Menu & Footer Styling */
+.menu, footer {
+    background-color: #FADCE6; /* Lighter pink */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+/* Buttons */
+body nav ul li button:hover, .menu nav ul li a:hover {
+    background-color: #4a2c29;
+    color: #fffef0;
+}
+
+/* RSVP Form Styling */
+#rsvp-form {
+    background-color: #FFF; /* White background for the form */
+    padding: 30px; /* Padding inside the form */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 10px; /* Slightly rounded corners for a soft look */
+    max-width: 600px; /* Max width to keep the form compact */
+    margin: 40px auto; /* Center the form with some margin */
+}
+
+#rsvp-form .form-group label {
+    color: #404040; /* Darker color for contrast */
+    font-family: 'Roboto', sans-serif; /* Consistent with body font */
+    margin-bottom: 10px; /* Space below each label */
+}
+
+#rsvp-form input[type="text"],
+#rsvp-form input[type="email"],
+#rsvp-form input[type="number"],
+#rsvp-form textarea {
+    border: 1px solid #ccc; /* Soft border color */
+    border-radius: 5px; /* Slightly rounded edges */
+    padding: 12px; /* Padding for input fields for ease of entry */
+    margin-bottom: 20px; /* Spacing between input fields */
+}
+
+#rsvp-form .rsvp-button {
+    font-family: 'Parisienne', cursive; /* Matching button font with headings */
+    font-size: 1.2rem; /* Larger font size for the button */
+}
+
+.rsvp-button {
+    background-color: #885053; /* Dusty rose */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Parisienne', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.rsvp-button:hover {
+    background-color: #702c3d; /* Darker shade for hover */
+}
+
+/* Footer */
+footer {
+    background-color: #FADCE6; /* Lighter pink */
+    color: #404040;
+    padding: 20px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+footer p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+/* Responsive Design Adjustments */
+@media screen and (max-width: 768px) {
+    header {
+        height: 50vh; /* Reducing height on smaller screens */
+    }
+    
+    header h1,
+    #invitation h2 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+    
+    .section-image {
+        background-attachment: scroll; /* Change to scroll for better mobile performance */
+    }
+    
+    #invitation,
+    #rsvp-form {
+        width: 90%; /* Increase width percentage for smaller screens */
+        padding: 20px 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1,
+    #invitation h2 {
+        font-size: 1.5rem; /* Adjust font size for very small screens */
+    }
+    
+    #invitation,
+    #rsvp-form {
+        width: 95%; /* Increase width percentage for very small screens */
+    }
+    
+    .menu nav ul li a,
+    footer p {
+        font-size: 0.9rem; /* Adjust font size for very small screens */
+    }
+}
+/* Loader Animation */
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
