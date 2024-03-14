@@ -1,105 +1,217 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="title">Wedding Website</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/htmx.org"></script>
-</head>
-<body>
-    <header>
-        <h1 data-i18n="welcome">Welcome to Our Wedding</h1>
-        <nav>
-            <ul>
-                <li><button id="lang-en">English</button></li>
-                <li><button id="lang-it">Italiano</button></li>
-                <li><button id="lang-gr">Ελληνικά</button></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="content">
-    <div class="menu">
-        <nav>
-            <ul>
-                <li><a href="#invitation" data-i18n="nav_invitation">Invitation</a></li>
-                <li><a href="#rsvp" data-i18n="nav_rsvp">RSVP</a></li>
-                <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
-                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>    
-    <section id="invitation">
-        <h2 data-i18n="invitation_details"data-i18n="invitatio_details">Invitation Details</h2>
-        <p data-i18n="join_us">Join us on our special day!</p>
-        <p><span data-i18n="date">Date</span>: <span id="wedding-date">28/06/2025</span></p>
-        <p><span data-i18n="location">Location</span>: <span id="wedding-location"> Trafalgar Tavern - Park Row, London SE10 9NW</span></p>
-    </section>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>M&M Wedding</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content= />
 
-    <!-- New Image Container -->
-    <div class="section-image" id="image-invitation"></div>
 
-    <section id="rsvp">
-        <h2 data-i18n="rsvp_header">RSVP</h2>
-        <form id="rsvp-form">
-            <div class="form-group">
-                <label for="participant-names" data-i18n="label_attendees"></label>
-                <input type="text" id="participant-names" name="participant_names" required pattern="^[a-zA-Z ]+$" data-i18n-attr="placeholder:placeholder_attendees, title:title_invalid_attendees">
-                <small class="form-text text-muted" data-i18n="message_attendees"></small>
-            </div>
-            
-            <div class="form-group">
-                <label for="email" data-i18n="label_email"></label>
-                <input type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" data-i18n-attr="placeholder:placeholder_email, title:title_invalid_email">
-                <small class="form-text text-muted" data-i18n="message_email"></small>
-            </div>
-            
-            <div class="form-group">
-                <label for="adults-number" data-i18n="label_adults"></label>
-                <input type="number" id="adults-number" name="adults_number" required min="1" max="10" data-i18n-attr="title:title_invalid_adults">
-                <small class="form-text text-muted" data-i18n="message_adults"></small>
-            </div>
-            
-            <div class="form-group">
-                <label for="children-number" data-i18n="label_children"></label>
-                <input type="number" id="children-number" name="children_number" min="0" max="10" data-i18n-attr="title:title_invalid_children">
-                <small class="form-text text-muted" data-i18n="message_children"></small>
-            </div>
-            
-            <div class="form-group">
-                <label for="allergies" data-i18n="label_allergies"></label>
-                <textarea id="allergies" name="allergies" pattern="^[a-zA-Z0-9,.?! ]+$" data-i18n-attr="placeholder:placeholder_allergies, title:title_invalid_allergies"></textarea>
-                <small class="form-text text-muted" data-i18n="message_allergies"></small>
-            </div>
-            
-            <div class="form-group">
-                <label for="not-attending" data-i18n="label_not_attending"></label>
-                <input type="checkbox" id="not-attending" name="not_attending">
-                <small class="form-text text-muted" data-i18n="message_not_attending"></small>
-            </div>
-            
-            <button type="submit" class="rsvp-button" data-i18n="submit_rsvp"></button>
-        </form>
-        <div id="loader" class="loader" style="display: none;"></div>
-        <div id="feedback-message"></div>
-    </section>
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
 
-    <!-- New Image Container -->
-    <div class="section-image" id="image-rsvp"></div>
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+	
+	<link href="https://fonts.googleapis.com/css?family=Montez" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="css/superfish.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	
+	<link rel="stylesheet" href="css/style.css">
 
-    <section id="gallery">
-        <h2 data-i18n="gallery">Photo Gallery</h2>
-        <div class="gallery-grid">
-            <!-- Gallery images go here -->
-        </div>
-    </section>
 
-</div>
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
 
-    <footer>
-        <p data-i18n="footer_thank_you">Thank you for celebrating with us!</p>
-    </footer>
+	</head>
+	<body>
+		<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+	
+		<div class="fh5co-hero" data-section="home">
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
+				<div class="display-t">
+					<div class="display-tc">
+						<div class="container">
+							<div class="col-md-10 col-md-offset-1">
+								<div class="animate-box">
+									<h1>The Wedding</h1>
+									<h2>Marco &amp; Myrto</h2>
+									<p><span>28.06.2025</span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <script src="script.js"></script>
-</body>
+		<header id="fh5co-header-section" class="sticky-banner">
+			<div class="container">
+				<div class="nav-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+					<h1 id="fh5co-logo"><a href="index.html">M&M Wedding</a></h1>
+					<!-- START #fh5co-menu-wrap -->
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li class="active"><a href="index.html" >Home</a></li>
+							<li><a href="groom-bride.html">Groom &amp; Bride</a></li>
+							<li><a href="when-where.html">When &amp; Where</a></li>			
+							<li><a href="gallery.html">Gallery</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<!-- end:header-top -->
+		
+		<div id="fh5co-couple" class="fh5co-section-gray">
+			<div class="container">
+				<div class="row row-bottom-padded-md animate-box">
+					<div class="col-md-6 col-md-offset-3 text-center">
+						<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
+							<img src="images/groom.jpg" class="img-responsive img-circular" >
+							<h3>Marco</h3>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-2 nopadding"><h2 class="amp-center"><i class="icon-heart"></i></h2></div>
+						<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
+							<img src="images/bride.jpg" class="img-responsive img-circular" >
+							<h3>Myrto</h3>
+						</div>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="col-md-12 text-center heading-section">
+							<h2>Are Getting Married</h2>
+							<p><strong>on Jun 28, 2025 &mdash; London, UK</strong></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="fh5co-countdown">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center animate-box">
+					<p class="countdown">
+						<span id="days"></span>
+						<span id="hours"></span>
+						<span id="minutes"></span>
+						<span id="seconds"></span>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="fh5co-started" style="background-image:url(images/cover_bg_2.jpg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+			<div class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section">
+						<h2>Are You Attending?</h2>
+						<p>Please Fill-up the form to notify you that you're attending. Thanks.
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-10 col-md-offset-1">
+						<form class="form-inline">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="name" class="sr-only">Name</label>
+										<input type="text" class="form-control" id="name" placeholder="Name">
+									</div>
+									<div class="form-group">
+										<label for="adults" class="sr-only">Number of Adults</label>
+										<input type="number" class="form-control" id="adults" placeholder="Number of Adults">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="email" class="sr-only">Email</label>
+										<input type="email" class="form-control" id="email" placeholder="Email">
+									</div>
+									<div class="form-group">
+										<label for="kids" class="sr-only">Number of Kids</label>
+										<input type="number" class="form-control" id="kids" placeholder="Number of Kids">
+									</div>
+									<div class="form-group">
+										<label for="kids_seats" class="sr-only">Number of Kids Seats</label>
+										<input type="number" class="form-control" id="kids_seats" placeholder="Number of Kids Seats">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="allergies" class="sr-only">Any Allergies</label>
+										<input type="text" class="form-control" id="allergies" placeholder="Any Allergies">
+									</div>
+									<div class="form-group">
+										<label for="attendance">Are you able to join?</label>
+										<select class="form-control" id="attendance">
+											<option value="yes">Yes</option>
+											<option value="no">No</option>
+										</select>
+									</div>
+									<button type="submit" class="btn btn-primary btn-block">Submit</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h2>M &amp; M</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	
+
+	</div>
+	<!-- END fh5co-page -->
+
+	</div>
+	<!-- END fh5co-wrapper -->
+
+	<!-- Google Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwtQVUXeJfs1ytxVVJHC-uozr1gdPL0XI&sensor=false"></script>
+	<!-- jQuery -->
+	<script src="dist/scripts.min.js"></script>
+	</body>
 </html>
+
