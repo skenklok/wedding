@@ -1,0 +1,34 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Node modules
+node_modules/
+
+# Distribution files
+dist/
+
+# SASS cache
+.sass-cache/
+
+# Dependency directories
+bower_components/
+.jekyll-cache/
+.jekyll-metadata
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# macOS directory attributes
+__MACOSX/
+
+# Directories for user-specific files
+.idea/
+.vscode/
+*.sublime-workspace
+
+# Build output directory
+build/
