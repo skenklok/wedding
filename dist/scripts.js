@@ -951,30 +951,29 @@ google.maps.event.addDomListener(window, 'load', init);
 	});
 
 	document.addEventListener('DOMContentLoaded', function() {
-		// Handler when the DOM is fully loaded
-		var form = document.getElementById('rsvp-form');
-	  
-		form.addEventListener('submit', function(event) {
-		  event.preventDefault(); // Prevent the form from submitting via the browser
-	  
-		  var formData = new FormData(form);
-	  
-		  fetch('https://script.google.com/macros/s/AKfycbyI15ks4TBVKSoneTNhluvnugFJ57VMNaUPzfZBKYz59OunLxkTNra1x8f7DvwWJ4cA/exec', {
-			method: 'POST',
-			body: formData
-		  })
-		  .then(response => response.text())
-		  .then(responseText => {
-			// Handle the response from the server
-			document.getElementById('form-response-message').innerHTML = responseText;
-		  })
-		  .catch(error => {
-			// Handle any errors that occurred during the post
-			console.error('Error:', error);
-			document.getElementById('form-response-message').innerHTML = "<p>Form submission NOT successful</p>";
-		  });
+	  var form = document.getElementById('rsvp-form');
+	
+	  form.addEventListener('submit', function(event) {
+		event.preventDefault();
+	
+		var formData = new FormData(form);
+	
+		fetch('https://script.google.com/macros/s/AKfycbwbl80QlDMziY4CqsmX1jg_grcXLzznQstWCzrjdqF4ess2ARkPrBk0CO5PvaE1dzjz/exec', {
+		  method: 'POST',
+		  mode: 'no-cors', // prevent the CORS error
+		  body: formData
+		})
+		.then(response => {
+		  // If response is opaque due to 'no-cors', handle accordingly
+		  document.getElementById('form-response-message').innerText = 'Form submitted successfully!';
+		})
+		.catch(error => {
+		  console.error('Error:', error);
+		  document.getElementById('form-response-message').innerText = 'There was an error submitting the form.';
 		});
 	  });
+	});
+	
 	  
 
 
