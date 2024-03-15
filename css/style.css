@@ -150,12 +150,15 @@ figure {
   position: relative;
   height: 800px;
   width: 100%;
+  background-attachment: scroll;
 }
 
 @media screen and (max-width: 768px) {
   .fh5co-cover,
   .fh5co-hero {
     height: 700px;
+    background-size: auto 700px; /* Adjust height as needed */
+    background-position: top center; /* Keeps the top part of the image in view */
   }
 }
 
