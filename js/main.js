@@ -182,5 +182,32 @@
 		stickyBanner();
 	});
 
+	document.addEventListener('DOMContentLoaded', function() {
+		// Handler when the DOM is fully loaded
+		var form = document.getElementById('rsvp-form');
+	  
+		form.addEventListener('submit', function(event) {
+		  event.preventDefault(); // Prevent the form from submitting via the browser
+	  
+		  var formData = new FormData(form);
+	  
+		  fetch('https://script.google.com/macros/s/AKfycbyI15ks4TBVKSoneTNhluvnugFJ57VMNaUPzfZBKYz59OunLxkTNra1x8f7DvwWJ4cA/exec', {
+			method: 'POST',
+			body: formData
+		  })
+		  .then(response => response.text())
+		  .then(responseText => {
+			// Handle the response from the server
+			document.getElementById('form-response-message').innerHTML = responseText;
+		  })
+		  .catch(error => {
+			// Handle any errors that occurred during the post
+			console.error('Error:', error);
+			document.getElementById('form-response-message').innerHTML = "<p>Form submission NOT successful</p>";
+		  });
+		});
+	  });
+	  
+
 
 }());

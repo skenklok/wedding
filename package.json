@@ -8,5 +8,10 @@
   "gulp-connect": "latest",
   "gulp-rename": "latest",
   "gulp-order": "latest"
+  },
+
+  "scripts": {
+    "gulp": "gulp js"
   }
+
 }
