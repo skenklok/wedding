@@ -140,48 +140,50 @@
 					</div>
 				</div>
 				<div class="row animate-box">
-					<div class="col-md-10 col-md-offset-1"><form class="form-inline">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="name" class="sr-only">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Name">
-            </div>
-            <div class="form-group">
-                <label for="adults" class="sr-only">Number of Adults</label>
-                <input type="number" class="form-control" id="adults" placeholder="Number of Adults">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="email" class="sr-only">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <label for="kids" class="sr-only">Number of Kids</label>
-                <input type="number" class="form-control" id="kids" placeholder="Number of Kids">
-            </div>
-            <div class="form-group">
-                <label for="kids_seats" class="sr-only">Number of Kids Seats</label>
-                <input type="number" class="form-control" id="kids_seats" placeholder="Number of Kids Seats">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="allergies" class="sr-only">Any Allergies</label>
-                <input type="text" class="form-control" id="allergies" placeholder="Any Allergies">
-            </div>
-            <div class="form-group">
-                <select class="form-control" id="attendance">
-                    <option value="">Are you able to join?</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Submit</button>
-        </div>
-    </div>
-</form>
+					<div class="col-md-10 col-md-offset-1">			
+						<form class="form-inline" id="rsvp-form">
+							<div class="row">
+							  <div class="col-md-4">
+								<div class="form-group">
+								  <label for="participant_names" class="sr-only">Name</label>
+								  <input type="text" class="form-control" id="participant_names" name="participant_names" placeholder="Name">
+								</div>
+								<div class="form-group">
+								  <label for="adults_number" class="sr-only">Number of Adults</label>
+								  <input type="number" class="form-control" id="adults_number" name="adults_number" placeholder="Number of Adults">
+								</div>
+							  </div>
+							  <div class="col-md-4">
+								<div class="form-group">
+								  <label for="email" class="sr-only">Email</label>
+								  <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+								</div>
+								<div class="form-group">
+								  <label for="children_number" class="sr-only">Number of Kids</label>
+								  <input type="number" class="form-control" id="children_number" name="children_number" placeholder="Number of Kids">
+								</div>
+							  </div>
+							  <div class="col-md-4">
+								<div class="form-group">
+								  <label for="allergies" class="sr-only">Any Allergies</label>
+								  <input type="text" class="form-control" id="allergies" name="allergies" placeholder="Any Allergies">
+								</div>
+								<div class="form-group">
+								  <label class="select-form" for="not_attending">Are you able to join?</label>
+								  <select class="form-control" id="not_attending" name="not_attending">
+									<option value="yes">Yes</option>
+									<option value="no">No</option>
+								  </select>
+								</div>
+								<button type="submit" class="btn btn-primary btn-block">Submit</button>
+							  </div>
+							</div>
+						  </form>
+						  <!-- Spinner HTML, hidden by default with 'display: none' -->
+							<div id="loading-spinner" class="loading-spinner">
+								<img src="images/spinner.gif" alt="Loading..." />
+							</div>
+						  <div class="form-response-message" id="form-response-message"></div>	
 					</div>
 				</div>
 			</div>

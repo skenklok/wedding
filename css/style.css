@@ -1274,3 +1274,15 @@ figure {
   object-fit: cover; /* ensures that the image covers the area, useful for responsive design */
 }
 
+
+.loading-spinner {
+  display: none;
+}
+
+.form-response-message {
+  color: #F69D9D;
+}
+
+.checkbox {
+  color: #ebebeb;
+}

@@ -951,32 +951,41 @@ google.maps.event.addDomListener(window, 'load', init);
 	});
 
 	document.addEventListener('DOMContentLoaded', function() {
-	  var form = document.getElementById('rsvp-form');
-	
-	  form.addEventListener('submit', function(event) {
-		event.preventDefault();
-	
-		var formData = new FormData(form);
-	
-		fetch('https://script.google.com/macros/s/AKfycbwbl80QlDMziY4CqsmX1jg_grcXLzznQstWCzrjdqF4ess2ARkPrBk0CO5PvaE1dzjz/exec', {
-		  method: 'POST',
-		  mode: 'no-cors', // prevent the CORS error
-		  body: formData
-		})
-		.then(response => {
-		  // If response is opaque due to 'no-cors', handle accordingly
-		  document.getElementById('form-response-message').innerText = 'Form submitted successfully!';
-		})
-		.catch(error => {
-		  console.error('Error:', error);
-		  document.getElementById('form-response-message').innerText = 'There was an error submitting the form.';
+		console.log("addEventListener - DOMContentLoaded");
+		var form = document.getElementById('rsvp-form');
+		var spinner = document.getElementById('loading-spinner'); // Get the spinner
+		var responseMessage = document.getElementById('form-response-message');
+	  
+		form.addEventListener('submit', function(event) {
+			console.log("addEventListener - submit");
+		  event.preventDefault();
+		  event.stopPropagation();
+		  spinner.style.display = 'block'; // Show the spinner
+		  responseMessage.innerText = ''; // Clear previous messages
+	  
+		  var formData = new FormData(form);
+		  formData.append('not_attending', form.querySelector('#attending').checked ? 'yes' : 'no');
+	  
+		  fetch('https://script.google.com/macros/s/AKfycbwbl80QlDMziY4CqsmX1jg_grcXLzznQstWCzrjdqF4ess2ARkPrBk0CO5PvaE1dzjz/exec', {
+			method: 'POST',
+			mode: 'no-cors', // prevent the CORS error
+			body: formData
+		  })
+		  .then(response => {
+			// If response is opaque due to 'no-cors', handle accordingly
+			responseMessage.innerText = 'Form submitted successfully!';
+		  })
+		  .catch(error => {
+			console.error('Error:', error);
+			responseMessage.innerText = 'There was an error submitting the form.';
+		  })
+		  .finally(() => {
+			spinner.style.display = 'none'; // Hide the spinner regardless of outcome
+			form.reset(); // Reset the form to prevent duplicate submissions
+		  });
 		});
 	  });
-	});
-	
 	  
-
-
 }());
 /* Modernizr 2.6.2 (Custom Build) | MIT & BSD
  * Build: http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-applicationcache-canvas-canvastext-draganddrop-hashchange-history-audio-video-indexeddb-input-inputtypes-localstorage-postmessage-sessionstorage-websockets-websqldatabase-webworkers-geolocation-inlinesvg-smil-svg-svgclippaths-touch-webgl-shiv-mq-cssclasses-addtest-prefixed-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-load

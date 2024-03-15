@@ -40,7 +40,7 @@ function processJS() {
     .pipe(gulp.dest(outputDir))
     .pipe(uglify({ mangle: false }))
     .pipe(rename('scripts.min.js'))
-    .pipe(gulp.dest(outputJSDir))
+    .pipe(gulp.dest(outputDir))
     .pipe(connect.reload());
 }
 
