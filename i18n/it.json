@@ -17,6 +17,29 @@
         "heading": "Stanno per sposarsi",
         "details": "il 28 giugno 2025 — Londra, Regno Unito"
       },
+      "groombride": {
+        "title": "Sposo & Sposa",
+        "groomName": "Marco",
+        "groomDescription": "Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius...",
+        "brideName": "Myrto",
+        "brideDescription": "Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius..."
+      },
+        "whenwhere": {
+          "ceremonyTitle": "Cerimonia di Matrimonio",
+          "ceremonyTime": "Sabato, 28 Giugno 2025, 12:00 @ Trafalgar Tavern",
+          "ceremonyDesc": "Annidato nel cuore storico di Greenwich, dove la nostra storia d'amore ha avuto inizio, il Trafalgar Tavern si erge come un faro di calore e fascino senza tempo. Questo non è solo il luogo del nostro matrimonio; è un simbolo del nostro viaggio, dall'incontro casuale tra le sue mura storiche al nuovo capitolo che stiamo per scrivere insieme. Mentre scambiamo i voti, saremo circondati dagli echi della storia e dal duraturo retaggio di amore e coraggio che lo stesso Ammiraglio Nelson ha incarnato. Il Trafalgar Tavern è più di un luogo che ci piace; è il terreno sacro dove i nostri due percorsi sono diventati uno, è la nostra chiesa!",
+          
+          "partyTitle": "Festa di Matrimonio",
+          "partyTime": "Sabato, 28 Giugno 2025, 14:00 @ Trafalgar Tavern",
+          "partyDesc": "Dopo esserci legati in matrimonio al Trafalgar Tavern, resteremo lì per continuare i festeggiamenti. Immagina questo: rilassarsi con del buon cibo e brindare con pinte di Guinness (o qualsiasi cosa tu preferisca)",
+          
+          "logisticTitle": "Logistica del Matrimonio",
+          "logisticSubtitle": "Come arrivare al Trafalgar",
+          "logisticDesc": "Dopo esserci legati in matrimonio al Trafalgar Tavern, resteremo lì per continuare i festeggiamenti. Immagina questo: rilassarsi con del buon cibo e brindare con pinte di Guinness (o qualsiasi cosa tu preferisca)",
+          
+          "giftTitle": "Regalo",
+          "giftDesc": "Nello spirito della celebrazione, vogliamo esprimere che la tua presenza al nostro matrimonio è il regalo più grande che potessimo chiedere. Comprendiamo che viaggiare a Londra può essere una spesa significativa, e la tua disponibilità a unirti a noi per questa occasione speciale ci rende davvero felici. Ti preghiamo di sapere che la tua presenza è tutto ciò che desideriamo, e siamo semplicemente entusiasti di condividere questo momento gioioso con te."
+        },
       "rsvp": {
         "heading": "Parteciperai?",
         "instructions": "Si prega di compilare il modulo per comunicarci la vostra partecipazione. Grazie.",

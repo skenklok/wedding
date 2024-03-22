@@ -44,45 +44,52 @@
 		<div id="fh5co-wrapper">
 		<div id="fh5co-page">
 	
-		<div class="fh5co-hero" data-section="home">
-			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center"  style="background-image: url(images/cover_bg_1.jpg);">
-				<div class="display-t">
-					<div class="display-tc">
-						<div class="container">
-							<div class="col-md-10 col-md-offset-1">
-								<div class="animate-box">
-									<h1>M&M Wedding</h1>
-									<h2>Our Gallery</h2>
+
+			<div class="fh5co-hero" data-section="home">
+				<div class="fh5co-overlay"></div>
+				<div class="fh5co-cover text-center" style="background-image: url(images/cover_bg_1.jpg);">
+					<div class="display-t">
+						<div class="display-tc">
+							<div class="container">
+								<div class="col-md-10 col-md-offset-1">
+									<div class="animate-box">
+										<h1 data-i18n="section.weddingTitle">The Wedding</h1>
+										<h2 data-i18n="section.names">Marco & Myrto</h2>
+										<p><span data-i18n="section.weddingDate">28.06.2025</span></p>
+										<div class="language-selection">
+											<img src="images/uk-flag.png" alt="English" id="lang-en"
+												class="language-flag">
+											<img src="images/grece-flag.png" alt="Greek" id="lang-el"
+												class="language-flag">
+											<img src="images/italy-flag.png" alt="Italian" id="lang-it"
+												class="language-flag">
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<header id="fh5co-header-section" class="sticky-banner">
-			<div class="container">
-				<div class="nav-header">
-					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.html">M&M Wedding</a></h1>
-					<!-- START #fh5co-menu-wrap -->
-					<nav id="fh5co-menu-wrap" role="navigation">
-						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li><a href="index.html" >Home</a></li>
-							<li>
-								<a href="groom-bride.html">Groom &amp; Bride</a>
-							</li>
-							<li><a href="when-where.html">When &amp; Where</a></li>
-							
-							<li class="active"><a href="gallery.html">Gallery</a></li>
-							
-						</ul>
-					</nav>
+			<header id="fh5co-header-section" class="sticky-banner">
+				<div class="container">
+					<div class="nav-header">
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+						<h1 id="fh5co-logo"><a href="index.html" data-i18n="navigation.title">M&M Wedding</a></h1>
+						<!-- START #fh5co-menu-wrap -->
+						<nav id="fh5co-menu-wrap" role="navigation">
+							<ul class="sf-menu" id="fh5co-primary-menu">
+								<li><a href="index.html" data-i18n="navigation.home">Home</a></li>
+								<li><a href="groom-bride.html" data-i18n="navigation.groombride">Groom & Bride</a></li>
+								<li><a href="when-where.html" data-i18n="navigation.whenwhere">When & Where</a></li>
+								<li class="active"><a href="gallery.html" data-i18n="navigation.gallery">Gallery</a></li>
+							</ul>
+						</nav>
+					</div>
+
 				</div>
-			</div>
-		</header>
+			</header>
 
 		<!-- end:header-top -->
 
@@ -126,59 +133,70 @@
 		</div>
 		
 		<div id="fh5co-started" style="background-image:url(images/cover_bg_2.jpg);">
-		<div class="overlay"></div>
+			<div class="overlay"></div>
 			<div class="container">
 				<div class="row animate-box">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section">
-						<h2>Are You Attending?</h2>
-						<p>Please Fill-up the form to notify you that you're attending. Thanks.
+						<h2 data-i18n="rsvp.heading">Are You Attending?</h2>
+						<p data-i18n="rsvp.instructions">Please Fill-up the form to notify you that you're
+							attending. Thanks.</p>
 					</div>
 				</div>
 				<div class="row animate-box">
-					<div class="col-md-10 col-md-offset-1">						
+					<div class="col-md-10 col-md-offset-1">
 						<form class="form-inline" id="rsvp-form">
 							<div class="row">
-							  <div class="col-md-4">
-								<div class="form-group">
-								  <label for="participant_names" class="sr-only">Name</label>
-								  <input type="text" class="form-control" id="participant_names" name="participant_names" placeholder="Name">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="participant_names" class="sr-only"
+											data-i18n="rsvp.nameLabel">Name</label>
+										<input type="text" class="form-control" id="participant_names"
+											name="participant_names" placeholder=""
+											data-i18n="rsvp.namePlaceholder">
+									</div>
+									<div class="form-group">
+										<label for="adults_number" class="sr-only"
+											data-i18n="rsvp.adultsLabel">Number of Adults</label>
+										<input type="number" class="form-control" id="adults_number"
+											name="adults_number" placeholder="" data-i18n="rsvp.adultsPlaceholder">
+									</div>
 								</div>
-								<div class="form-group">
-								  <label for="adults_number" class="sr-only">Number of Adults</label>
-								  <input type="number" class="form-control" id="adults_number" name="adults_number" placeholder="Number of Adults">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="email" class="sr-only" data-i18n="rsvp.emailLabel">Email</label>
+										<input type="email" class="form-control" id="email" name="email"
+											placeholder="" data-i18n="rsvp.emailPlaceholder">
+									</div>
+									<div class="form-group">
+										<label for="children_number" class="sr-only"
+											data-i18n="rsvp.kidsLabel">Number of Kids</label>
+										<input type="number" class="form-control" id="children_number"
+											name="children_number" placeholder="" data-i18n="rsvp.kidsPlaceholder">
+									</div>
 								</div>
-							  </div>
-							  <div class="col-md-4">
-								<div class="form-group">
-								  <label for="email" class="sr-only">Email</label>
-								  <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="allergies" class="sr-only" data-i18n="rsvp.allergiesLabel">Any
+											Allergies</label>
+										<input type="text" class="form-control" id="allergies" name="allergies"
+											placeholder="" data-i18n="rsvp.allergiesPlaceholder">
+									</div>
+									<div class="form-group">
+										<div class="checkbox">
+											<label data-i18n="rsvp.attending"></label>
+											<input type="checkbox" id="attending" name="attending" value="yes">
+										</div>
+									</div>
+									<button type="submit" class="btn btn-primary btn-block"
+										data-i18n="rsvp.submit">Submit</button>
 								</div>
-								<div class="form-group">
-								  <label for="children_number" class="sr-only">Number of Kids</label>
-								  <input type="number" class="form-control" id="children_number" name="children_number" placeholder="Number of Kids">
-								</div>
-							  </div>
-							  <div class="col-md-4">
-								<div class="form-group">
-								  <label for="allergies" class="sr-only">Any Allergies</label>
-								  <input type="text" class="form-control" id="allergies" name="allergies" placeholder="Any Allergies">
-								</div>
-								<div class="form-group">
-								  <label for="not_attending">Are you able to join?</label>
-								  <select class="form-control" id="not_attending" name="not_attending">
-									<option value="yes">Yes</option>
-									<option value="no">No</option>
-								  </select>
-								</div>
-								<button type="submit" class="btn btn-primary btn-block">Submit</button>
-							  </div>
 							</div>
-						  </form>
-						  <!-- Spinner HTML, hidden by default with 'display: none' -->
-						  <div id="loading-spinner" class="loading-spinner">
+						</form>
+						<!-- Spinner HTML, hidden by default with 'display: none' -->
+						<div id="loading-spinner" class="loading-spinner">
 							<img src="images/spinner.gif" alt="Loading..." />
 						</div>
-					  <div class="form-response-message" id="form-response-message"></div>		
+						<div class="form-response-message" id="form-response-message"></div>
 					</div>
 				</div>
 			</div>
@@ -189,27 +207,32 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 text-center">
-							<h2>Marco &amp; Myrto</h2>
+							<h2>M &amp; M</h2>
 						</div>
-
 					</div>
 				</div>
 			</div>
 		</footer>
 
-	
+
 
 	</div>
 	<!-- END fh5co-page -->
 
-	</div>
-	<!-- END fh5co-wrapper -->
+</div>
+<!-- END fh5co-wrapper -->
 
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwtQVUXeJfs1ytxVVJHC-uozr1gdPL0XI&sensor=false"></script>
-	<!-- jQuery -->
-		<script src="dist/scripts.min.js"></script>
-	<script src="https://unpkg.com/i18next@latest"></script>
-	</body>
+<!-- Google Map -->
+<script
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwtQVUXeJfs1ytxVVJHC-uozr1gdPL0XI&sensor=false"></script>
+<script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+<script src="js/modernizr-2.6.2.min.js"></script>
+<!-- Include your main script here -->
+<script src="dist/scripts.min.js"></script>
+
+
+
+
+</body>
+
 </html>
-
