@@ -6,6 +6,7 @@
 <html class="no-js"> <!--<![endif]-->
 
 <head>
+
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>M&M Wedding</title>
@@ -43,7 +44,7 @@
 
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -63,9 +64,14 @@
 							<div class="container">
 								<div class="col-md-10 col-md-offset-1">
 									<div class="animate-box">
-										<h1>The Wedding</h1>
-										<h2>Marco &amp; Myrto</h2>
-										<p><span>28.06.2025</span></p>
+										<h1 data-i18n="section.weddingTitle">The Wedding</h1>
+										<h2 data-i18n="section.names">Marco & Myrto</h2>
+										<p><span data-i18n="section.weddingDate">28.06.2025</span></p>
+										<div class="language-selection">
+											<img src="images/uk-flag.png" alt="English" id="lang-en" class="language-flag">
+											<img src="images/grece-flag.png" alt="Greek" id="lang-el" class="language-flag">
+											<img src="images/italy-flag.png" alt="Italian" id="lang-it" class="language-flag">
+										</div>
 									</div>
 								</div>
 							</div>
@@ -78,17 +84,18 @@
 				<div class="container">
 					<div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-						<h1 id="fh5co-logo"><a href="index.html">M&M Wedding</a></h1>
+						<h1 id="fh5co-logo"><a href="index.html" data-i18n="navigation.title">M&M Wedding</a></h1>
 						<!-- START #fh5co-menu-wrap -->
 						<nav id="fh5co-menu-wrap" role="navigation">
 							<ul class="sf-menu" id="fh5co-primary-menu">
-								<li class="active"><a href="index.html">Home</a></li>
-								<li><a href="groom-bride.html">Groom &amp; Bride</a></li>
-								<li><a href="when-where.html">When &amp; Where</a></li>
-								<li><a href="gallery.html">Gallery</a></li>
+								<li class="active"><a href="index.html" data-i18n="navigation.home">Home</a></li>
+								<li><a href="groom-bride.html" data-i18n="navigation.groombride">Groom & Bride</a></li>
+								<li><a href="when-where.html" data-i18n="navigation.whenwhere">When & Where</a></li>
+								<li><a href="gallery.html" data-i18n="navigation.gallery">Gallery</a></li>
 							</ul>
 						</nav>
 					</div>
+
 				</div>
 			</header>
 
@@ -100,27 +107,28 @@
 						<div class="col-md-6 col-md-offset-3 text-center">
 							<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
 								<img src="images/groom.jpg" class="img-responsive img-circular">
-								<h3>Marco</h3>
+								<h3 data-i18n="couple.groomName">Marco</h3>
 							</div>
 							<div class="col-md-2 col-sm-2 col-xs-2 nopadding">
 								<h2 class="amp-center"><i class="icon-heart"></i></h2>
 							</div>
 							<div class="col-md-5 col-sm-5 col-xs-5 nopadding">
 								<img src="images/bride.jpg" class="img-responsive img-circular">
-								<h3>Myrto</h3>
+								<h3 data-i18n="couple.brideName">Myrto</h3>
 							</div>
 						</div>
 					</div>
 					<div class="row animate-box">
 						<div class="col-md-8 col-md-offset-2">
 							<div class="col-md-12 text-center heading-section">
-								<h2>Are Getting Married</h2>
-								<p><strong>on Jun 28, 2025 &mdash; London, UK</strong></p>
+								<h2 data-i18n="couple.heading">Are Getting Married</h2>
+								<p data-i18n="couple.details"><strong>on Jun 28, 2025 &mdash; London, UK</strong></p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+
 			<div id="fh5co-countdown">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center animate-box">
@@ -139,8 +147,9 @@
 				<div class="container">
 					<div class="row animate-box">
 						<div class="col-md-8 col-md-offset-2 text-center heading-section">
-							<h2>Are You Attending?</h2>
-							<p>Please Fill-up the form to notify you that you're attending. Thanks.
+							<h2 data-i18n="rsvp.heading">Are You Attending?</h2>
+							<p data-i18n="rsvp.instructions">Please Fill-up the form to notify you that you're
+								attending. Thanks.</p>
 						</div>
 					</div>
 					<div class="row animate-box">
@@ -149,43 +158,49 @@
 								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
-											<label for="participant_names" class="sr-only">Name</label>
+											<label for="participant_names" class="sr-only"
+												data-i18n="rsvp.nameLabel">Name</label>
 											<input type="text" class="form-control" id="participant_names"
-												name="participant_names" placeholder="Name">
+												name="participant_names" placeholder=""
+												data-i18n="rsvp.namePlaceholder">
 										</div>
 										<div class="form-group">
-											<label for="adults_number" class="sr-only">Number of Adults</label>
+											<label for="adults_number" class="sr-only"
+												data-i18n="rsvp.adultsLabel">Number of Adults</label>
 											<input type="number" class="form-control" id="adults_number"
-												name="adults_number" placeholder="Number of Adults">
+												name="adults_number" placeholder=""
+												data-i18n="rsvp.adultsPlaceholder">
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label for="email" class="sr-only">Email</label>
+											<label for="email" class="sr-only" data-i18n="rsvp.emailLabel">Email</label>
 											<input type="email" class="form-control" id="email" name="email"
-												placeholder="Email">
+												placeholder="" data-i18n="rsvp.emailPlaceholder">
 										</div>
 										<div class="form-group">
-											<label for="children_number" class="sr-only">Number of Kids</label>
+											<label for="children_number" class="sr-only"
+												data-i18n="rsvp.kidsLabel">Number of Kids</label>
 											<input type="number" class="form-control" id="children_number"
-												name="children_number" placeholder="Number of Kids">
+												name="children_number" placeholder=""
+												data-i18n="rsvp.kidsPlaceholder">
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label for="allergies" class="sr-only">Any Allergies</label>
+											<label for="allergies" class="sr-only" data-i18n="rsvp.allergiesLabel">Any
+												Allergies</label>
 											<input type="text" class="form-control" id="allergies" name="allergies"
-												placeholder="Any Allergies">
+												placeholder="" data-i18n="rsvp.allergiesPlaceholder">
 										</div>
 										<div class="form-group">
 											<div class="checkbox">
-												<label>
+												<label data-i18n="rsvp.attending"></label>
 													<input type="checkbox" id="attending" name="attending" value="yes">
-													Are you able to join?
-												</label>
 											</div>
 										</div>
-										<button type="submit" class="btn btn-primary btn-block">Submit</button>
+										<button type="submit" class="btn btn-primary btn-block"
+											data-i18n="rsvp.submit">Submit</button>
 									</div>
 								</div>
 							</form>
@@ -220,10 +235,15 @@
 	<!-- END fh5co-wrapper -->
 
 	<!-- Google Map -->
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwtQVUXeJfs1ytxVVJHC-uozr1gdPL0XI&sensor=false"></script>
-	<!-- jQuery -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwtQVUXeJfs1ytxVVJHC-uozr1gdPL0XI&sensor=false"></script>
+	<script src="https://unpkg.com/i18next/dist/umd/i18next.min.js"></script>
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- Include your main script here -->
 	<script src="dist/scripts.min.js"></script>
+
+	
+
+
 </body>
 
 </html>

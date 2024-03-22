@@ -985,6 +985,68 @@ google.maps.event.addDomListener(window, 'load', init);
 		  });
 		});
 	  });
+
+	  var translations = {};
+
+	  function loadTranslation(lang) {
+		  fetch(`i18n/${lang}.json`)
+			  .then(response => {
+				  if (!response.ok) {
+					  throw new Error(`HTTP error! Status: ${response.status}`);
+				  }
+				  return response.json();
+			  })
+			  .then(json => {
+				  translations[lang] = json;
+				  console.log(`Loaded translations for ${lang}:`, translations[lang]); // Debugging line
+				  updateContent(lang);
+			  })
+			  .catch(error => {
+				  console.error(`Could not load ${lang} translations:`, error);
+			  });
+	  }
+	  
+	  function updateContent(lang) {
+		var elements = document.querySelectorAll('[data-i18n]');
+		elements.forEach(element => {
+			var keys = element.getAttribute('data-i18n').split('.');
+			var translation = keys.reduce((obj, key) => obj && obj[key], translations[lang]);
+	
+			if (translation) {
+				if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+					element.placeholder = translation; // For input placeholders
+				} else {
+					element.textContent = translation; // For other elements
+				}
+			} else {
+				// Check if the key is meant for a placeholder
+				if (keys[0] === '[placeholder]') {
+					// Attempt to find the placeholder translation without the prefix
+					var placeholderKey = keys.slice(1).join('.');
+					var placeholderTranslation = translations[lang][placeholderKey];
+					if (placeholderTranslation) {
+						element.placeholder = placeholderTranslation;
+					} else {
+						console.warn(`Missing translation for placeholder: ${placeholderKey} in language: ${lang}`);
+					}
+				} else {
+					console.warn(`Missing translation for: ${keys.join('.')} in language: ${lang}`);
+				}
+			}
+		});
+	}
+	
+	  
+	  document.addEventListener('DOMContentLoaded', () => {
+		  loadTranslation('en'); // Load default language on DOMContentLoaded
+	  
+		  // Event listeners for language switch
+		  document.getElementById('lang-en').addEventListener('click', () => loadTranslation('en'));
+		  document.getElementById('lang-el').addEventListener('click', () => loadTranslation('el'));
+		  document.getElementById('lang-it').addEventListener('click', () => loadTranslation('it')); 
+		  // Add similar event listener for other languages if available
+	  });
+	   
 	  
 }());
 /* Modernizr 2.6.2 (Custom Build) | MIT & BSD

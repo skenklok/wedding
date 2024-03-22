@@ -1,0 +1,36 @@
+{
+  "section": {
+    "weddingTitle": "Ο Γάμος",
+    "names": "Μάρκος & Μυρτώ",
+    "weddingDate": "28.06.2025"
+  },
+  "navigation": {
+    "title": "Γάμος M&M",
+    "home": "Αρχική",
+    "groombride": "Γαμπρός & Νύφη",
+    "whenwhere": "Πότε & Πού",
+    "gallery": "Γκαλερί"
+  },
+  "couple": {
+    "groomName": "Μάρκος",
+    "brideName": "Μυρτώ",
+    "heading": "Παντρεύονται",
+    "details": "στις 28 Ιουνίου 2025 — Λονδίνο, Ηνωμένο Βασίλειο"
+  },
+  "rsvp": {
+    "heading": "Θα Παρευρεθείτε;",
+    "instructions": "Παρακαλώ συμπληρώστε τη φόρμα για να μας ενημερώσετε αν θα παρευρεθείτε. Ευχαριστούμε.",
+    "nameLabel": "Όνομα",
+    "namePlaceholder": "Το Όνομά σας",
+    "adultsLabel": "Αριθμός Ενηλίκων",
+    "adultsPlaceholder": "Πόσοι ενήλικες;",
+    "emailLabel": "Ηλεκτρονική Διεύθυνση",
+    "emailPlaceholder": "Η Ηλεκτρονική σας Διεύθυνση",
+    "kidsLabel": "Αριθμός Παιδιών",
+    "kidsPlaceholder": "Πόσα παιδιά;",
+    "allergiesLabel": "Αλλεργίες",
+    "allergiesPlaceholder": "Υπάρχουν αλλεργίες που πρέπει να γνωρίζουμε;",
+    "attending": "Θα μπορέσετε να παρευρεθείτε;",
+    "submit": "Υποβολή"
+  }
+}

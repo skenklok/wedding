@@ -1286,3 +1286,8 @@ figure {
 .checkbox {
   color: #ebebeb;
 }
+
+.language-flag {
+  height: 50px;
+  width: 50px;
+}

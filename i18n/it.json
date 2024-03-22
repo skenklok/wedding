@@ -1,0 +1,38 @@
+{
+    "section": {
+      "weddingTitle": "Il Matrimonio",
+      "names": "Marco & Myrto",
+      "weddingDate": "28.06.2025"
+    },
+    "navigation": {
+        "title": "Matrimonio M&M",
+        "home": "Home",
+        "groombride": "Sposo & Sposa",
+        "whenwhere": "Quando & Dove",
+        "gallery": "Galleria"
+      },
+      "couple": {
+        "groomName": "Marco",
+        "brideName": "Myrto",
+        "heading": "Stanno per sposarsi",
+        "details": "il 28 giugno 2025 — Londra, Regno Unito"
+      },
+      "rsvp": {
+        "heading": "Parteciperai?",
+        "instructions": "Si prega di compilare il modulo per comunicarci la vostra partecipazione. Grazie.",
+        "nameLabel": "Nome",
+        "namePlaceholder": "Il tuo nome",
+        "adultsLabel": "Numero di Adulti",
+        "adultsPlaceholder": "Quanti adulti?",
+        "emailLabel": "Email",
+        "emailPlaceholder": "La tua email",
+        "kidsLabel": "Numero di Bambini",
+        "kidsPlaceholder": "Quanti bambini?",
+        "allergiesLabel": "Allergie",
+        "allergiesPlaceholder": "Ci sono allergie che dovremmo conoscere?",
+        "attending": "Sarai dei nostri?",
+        "submit": "Invia"
+    }
+    
+  }
+  
