@@ -720,6 +720,7 @@ $(document).ready(function() {
 
 var google;
 
+if (document.getElementById('map')) {
 function init() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
@@ -766,6 +767,8 @@ function init() {
     
 }
 google.maps.event.addDomListener(window, 'load', init);
+
+}
 ;(function () {
 	
 	'use strict';
@@ -821,11 +824,15 @@ google.maps.event.addDomListener(window, 'load', init);
 		$('#fh5co-page').prepend($clone);
 
 		// click the burger
-		$('.js-fh5co-nav-toggle').on('click', function(){
+		$('.js-fh5co-nav-toggle').on('click', function(e){
+			console.log("Burger menu clicked");
+			e.stopPropagation(); 
 
 			if ( $('body').hasClass('fh5co-offcanvas') ) {
+				console.log("Removing class");
 				$('body').removeClass('fh5co-offcanvas');
 			} else {
+				console.log("Adding class");
 				$('body').addClass('fh5co-offcanvas');
 			}
 			// event.preventDefault();
@@ -855,14 +862,16 @@ google.maps.event.addDomListener(window, 'load', init);
 	// Click outside of the Mobile Menu
 	var mobileMenuOutsideClick = function() {
 		$(document).click(function (e) {
-	    var container = $("#offcanvas-menu, .js-fh5co-nav-toggle");
-	    if (!container.is(e.target) && container.has(e.target).length === 0) {
-	      if ( $('body').hasClass('fh5co-offcanvas') ) {
-				$('body').removeClass('fh5co-offcanvas');
+			var container = $("#offcanvas-menu, .js-fh5co-nav-toggle");
+			if (!container.is(e.target) && container.has(e.target).length === 0) {
+				if ( $('body').hasClass('fh5co-offcanvas') ) {
+					$('body').removeClass('fh5co-offcanvas');
+				}
 			}
-	    }
 		});
 	};
+
+
 
 
 	// Animations
@@ -951,13 +960,11 @@ google.maps.event.addDomListener(window, 'load', init);
 	});
 
 	document.addEventListener('DOMContentLoaded', function() {
-		console.log("addEventListener - DOMContentLoaded");
 		var form = document.getElementById('rsvp-form');
 		var spinner = document.getElementById('loading-spinner'); // Get the spinner
 		var responseMessage = document.getElementById('form-response-message');
 	  
-		form.addEventListener('submit', function(event) {
-			console.log("addEventListener - submit");
+		form.addEventListener('submit', function(event) {;
 		  event.preventDefault();
 		  event.stopPropagation();
 		  spinner.style.display = 'block'; // Show the spinner
