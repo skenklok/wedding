@@ -38,69 +38,21 @@
 	};
 
 
-	// Offcanvas and cloning of the main menu
-	var offcanvas = function() {
-
-		var $clone = $('#fh5co-menu-wrap').clone();
-		$clone.attr({
-			'id' : 'offcanvas-menu'
-		});
-		$clone.find('> ul').attr({
-			'class' : '',
-			'id' : ''
-		});
-
-		$('#fh5co-page').prepend($clone);
-
-		// click the burger
-		$('.js-fh5co-nav-toggle').on('click', function(e){
-			console.log("Burger menu clicked");
-			e.stopPropagation(); 
-
-			if ( $('body').hasClass('fh5co-offcanvas') ) {
-				console.log("Removing class");
-				$('body').removeClass('fh5co-offcanvas');
-			} else {
-				console.log("Adding class");
-				$('body').addClass('fh5co-offcanvas');
-			}
-			// event.preventDefault();
-
-		});
-
-		$('#offcanvas-menu').css('height', $(window).height());
-
-		$(window).resize(function(){
-			var w = $(window);
-
-
-			$('#offcanvas-menu').css('height', w.height());
-
-			if ( w.width() > 769 ) {
-				if ( $('body').hasClass('fh5co-offcanvas') ) {
-					$('body').removeClass('fh5co-offcanvas');
-				}
-			}
-
-		});	
-
-	}
-
+	
+	
 	
 
 	// Click outside of the Mobile Menu
 	var mobileMenuOutsideClick = function() {
 		$(document).click(function (e) {
-			var container = $("#offcanvas-menu, .js-fh5co-nav-toggle");
-			if (!container.is(e.target) && container.has(e.target).length === 0) {
-				if ( $('body').hasClass('fh5co-offcanvas') ) {
-					$('body').removeClass('fh5co-offcanvas');
-				}
+	    var container = $("#offcanvas-menu, .js-fh5co-nav-toggle");
+	    if (!container.is(e.target) && container.has(e.target).length === 0) {
+	      if ( $('body').hasClass('fh5co-offcanvas') ) {
+				$('body').removeClass('fh5co-offcanvas');
 			}
+	    }
 		});
 	};
-
-
 
 
 	// Animations
@@ -143,7 +95,7 @@
 	};
 
 	// Set the date we're counting down to
-	var countDownDate = new Date("Jun 28, 2025 12:00:00").getTime();
+	var countDownDate = new Date("Dec 28, 2017 15:37:25").getTime();
 
 	// Update the count down every 1 second
 	var x = setInterval(function() {
@@ -241,7 +193,7 @@
 				  console.error(`Could not load ${lang} translations:`, error);
 			  });
 	  }
-	  
+
 	  function updateContent(lang) {
 		var elements = document.querySelectorAll('[data-i18n]');
 		elements.forEach(element => {
@@ -271,17 +223,16 @@
 			}
 		});
 	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		loadTranslation('en'); // Load default language on DOMContentLoaded
 	
-	  
-	  document.addEventListener('DOMContentLoaded', () => {
-		  loadTranslation('en'); // Load default language on DOMContentLoaded
-	  
-		  // Event listeners for language switch
-		  document.getElementById('lang-en').addEventListener('click', () => loadTranslation('en'));
-		  document.getElementById('lang-el').addEventListener('click', () => loadTranslation('el'));
-		  document.getElementById('lang-it').addEventListener('click', () => loadTranslation('it')); 
-		  // Add similar event listener for other languages if available
-	  });
-	   
-	  
+		// Event listeners for language switch
+		document.getElementById('lang-en').addEventListener('click', () => loadTranslation('en'));
+		document.getElementById('lang-el').addEventListener('click', () => loadTranslation('el'));
+		document.getElementById('lang-it').addEventListener('click', () => loadTranslation('it')); 
+		// Add similar event listener for other languages if available
+	});
+
+
 }());
