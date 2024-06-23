@@ -16,7 +16,7 @@ const outputDir = 'dist';
 function compileSass() {
   return gulp.src(sassSources)
     .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-    .pipe(gulp.dest(outputCSSDir))
+    .pipe(gulp.dest(outputDir))
     .pipe(connect.reload());
 }
 

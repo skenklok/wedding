@@ -22,10 +22,6 @@ body {
   overflow-x: hidden;
 }
 
-body.fh5co-offcanvas {
-  overflow: hidden;
-}
-
 a {
   color: #F69D9D;
   -webkit-transition: 0.5s, ease;
@@ -962,27 +958,11 @@ figure {
   position: relative;
 }
 
-.fh5co-offcanvas {
-  overflow: hidden;
-}
-
-.fh5co-offcanvas #fh5co-wrapper {
-  overflow: hidden !important;
-}
-
 #fh5co-page {
   position: relative;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-}
-
-.fh5co-offcanvas #fh5co-page {
-  -moz-transform: translateX(-240px);
-  -webkit-transform: translateX(-240px);
-  -ms-transform: translateX(-240px);
-  -o-transform: translateX(-240px);
-  transform: translateX(-240px);
 }
 
 @media screen and (max-width: 768px) {
@@ -1002,12 +982,6 @@ figure {
   padding: 20px;
   overflow-y: scroll !important;
   display: none;
-}
-
-@media screen and (max-width: 768px) {
-  #offcanvas-menu {
-    display: block;
-  }
 }
 
 #offcanvas-menu ul {
@@ -1290,4 +1264,28 @@ figure {
 .language-flag {
   height: 50px;
   width: 50px;
+}
+body.fh5co-offcanvas {
+  overflow: hidden;
+}
+
+body.fh5co-offcanvas #offcanvas-menu {
+  display: block;
+}
+
+#offcanvas-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 99;
+  background: #222;
+  right: -240px;
+  width: 240px;
+  padding: 20px;
+  overflow-y: scroll !important;
+  display: none;
+}
+
+.fh5co-offcanvas #fh5co-page {
+  transform: translateX(-240px);
 }
