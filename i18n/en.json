@@ -1,60 +1,49 @@
 {
-    "section": {
-      "weddingTitle": "The Wedding",
-      "names": "Marco & Myrto",
-      "weddingDate": "28.06.2025"
-    },
-    "navigation": {
-        "title": "M&M Wedding",
-        "home": "Home",
-        "groombride": "Groom & Bride",
-        "whenwhere": "When & Where",
-        "gallery": "Gallery"
-      },
-      "couple": {
-        "groomName": "Marco",
-        "brideName": "Myrto",
-        "heading": "Are Getting Married",
-        "details": "on Jun 28, 2025 — London, UK"
-      },
-      "groombride": {
-        "title": "Groom & Bride",
-        "groomName": "Marco",
-        "groomDescription": "",
-        "brideName": "Myrto",
-        "brideDescription": ""
-      },
-        "whenwhere": {
-          "ceremonyTitle": "Wedding Ceremony",
-          "ceremonyTime": "Saturday, June 28, 2025, 12.00 PM @ Trafalgar Tavern",
-          "ceremonyDesc": "The Trafalgar Tavern, located at Park Row, Greenwich, London, SE10 9NW, is a historic riverside pub with a rich and storied past. Built in 1837 by architect Joseph Kay, it stands on the site of the Old George Tavern and quickly became a fashionable destination in Victorian London. The tavern was a popular haunt for notable figures such as Charles Dickens, who set the wedding breakfast in his novel Our Mutual Friend in its Hawke Room, and it hosted political whitebait dinners for the Liberal party in the 19th century.\n\nThroughout the 20th century, the building served various purposes, including as a home for aged seamen and a working men's club, before reopening as a pub in 1965. It was restored to its Victorian grandeur in 1968 and designated a Grade II listed building in 1973. Today, the Trafalgar Tavern retains its historical charm with elegant interiors, maritime-themed artworks, and stunning views of the River Thames, making it a unique and picturesque venue for weddings and other celebrations.\n\nWe chose the Trafalgar Tavern as our wedding location because we admire the beauty of the pub. It has been our go-to place for weekends, Sunday roasts, and is like a church to us—being sarcastic, of course. We have celebrated birthdays, Christmases, and witnessed several weddings here until we decided there's no better place for us to host our wedding. We look forward to sharing this friendly, informal setting with our loved ones and ensuring everyone gets immersed in the 'Trafalgar experience'.",
-      
-          "partyTitle": "Wedding Party",
-          "partyTime": "Saturday, June 28, 2025, 14.00 PM @ Trafalgar Tavern",
-          "partyDesc": "We are excited to invite you to join us for our special day at the Trafalgar Tavern! Here are the details:\n\n- Ceremony: The celebration begins at 12 PM in the pub, where we will exchange our vows.\n\n- Meal: After the ceremony, we will enjoy a delightful meal with stunning views of the Thames.\n\n- Reception: Once we've savored the meal, it's time to party, dancing and enjoying the bar.\n\nWe can't wait to share this unforgettable day with you!",
-      
-          "logisticTitle": "Wedding Logistic",
-          "logisticSubtitle": "Where to get to the Trafalgar",
-          "logisticDesc": "Travel from Italy or Greece:\n\nFor our guests traveling from Athens, Greece, or Sardinia, Italy, we recommend flying into one of the following airports:\n\n- London City Airport (LCY): The closest airport to Greenwich, about 30 minutes away by public transport.\n- Heathrow Airport (LHR): A major international hub with excellent connections to central London.\n- Gatwick Airport (LGW): Another major airport with good transport links to central London.\n\nAccommodation Options:\n\nWe have a few accommodation suggestions to make your stay comfortable and enjoyable:\n\n1. Ibis London Greenwich: A budget-friendly option located just a short walk from the Trafalgar Tavern. (https://all.accor.com/hotel/3146/index.en.shtml)\n2. Novotel London Greenwich: A mid-range option nearby. (https://all.accor.com/hotel/3476/index.en.shtml)\n3. Hilton London Canary Wharf: We have arranged a discount for our guests at this hotel in Deptford, which is a quick journey to Greenwich. (https://www.hilton.com/en/hotels/loncwhi-hilton-london-canary-wharf/)\n4. Radisson Blu Edwardian, New Providence Wharf: An upscale option with easy access to Greenwich. (https://www.radissonhotels.com/en-us/hotels/radisson-blu-edwardian-london-new-providence-wharf)\n\nGetting to the Trafalgar Tavern:\n\nThe Trafalgar Tavern is well-connected by various modes of transport:\n\n1. DLR (Docklands Light Railway): The nearest DLR station is Cutty Sark for Maritime Greenwich, which is a short walk from the pub. You can easily connect to the DLR from Canary Wharf, which is on the Jubilee Line.\n2. Uber Boat by Thames Clippers: For a scenic route, take the Uber Boat from central London (e.g., Westminster or North Greenwich) directly to Greenwich Pier, which is a pleasant stroll away from the tavern. (https://www.thamesclippers.com/)\n3. Public Transport: Buses and trains also serve the area well, with frequent services to and from central London.\n\nTransport Apps:\n\nTo help you navigate London, here are some useful transport apps:\n\n1. Citymapper: (https://citymapper.com/london)\n2. Google Maps: (https://maps.google.com)\n3. TfL Go (Transport for London's official app): (https://tfl.gov.uk/maps_/tfl-go)\n\nTaxi Services:\n\nFor convenient travel around London, consider using these taxi services:\n\n1. Gett: (https://www.gett.com/uk/)\n2. Uber: (https://www.uber.com/gb/en/)\n3. FREE NOW: (https://www.free-now.com/uk/)\n\nWe hope these details help you plan your trip and make the most of your time in Greenwich. We can't wait to celebrate with you at the Trafalgar Tavern!",
-      
-          "giftTitle": "No Gift Policy",
-          "giftDesc": "We are truly grateful for your presence on our special day. Your love and support are the greatest gifts we could ask for. Please, no gifts—just join us in celebrating our union"
-        },
-      "rsvp": {
-        "heading": "Are You Attending?",
-        "instructions": "Please fill up the form to notify us that you're attending. Thanks.",
-        "nameLabel": "Name",
-        "namePlaceholder": "Your Name",
-        "adultsLabel": "Number of Adults",
-        "adultsPlaceholder": "How many adults?",
-        "emailLabel": "Email",
-        "emailPlaceholder": "Your Email",
-        "kidsLabel": "Number of Kids",
-        "kidsPlaceholder": "How many kids?",
-        "allergiesLabel": "Any Allergies",
-        "allergiesPlaceholder": "Any allergies we should know about?",
-        "attending": "Are you able to join us?",
-        "submit": "Submit"
-      }
+  "section": {
+    "weddingTitle": "The Wedding",
+    "names": "Marco & Myrto",
+    "weddingDate": "28.06.2025"
+  },
+  "navigation": {
+    "title": "M&M Wedding",
+    "home": "Home",
+    "ourstory": "Our Story",
+    "details": "Details",
+    "gallery": "Gallery"
+  },
+  "couple": {
+    "groomName": "Marco",
+    "brideName": "Myrto",
+    "heading": "Are Getting Married",
+    "details": "on Jun 28, 2025 — London, UK"
+  },
+  "whenwhere": {
+    "ceremonyTitle": "Wedding Ceremony",
+    "ceremonyTime": "Saturday, June 28, 2025, 12.00 PM @ Trafalgar Tavern",
+    "ceremonyDesc": "The Trafalgar Tavern, located at Park Row, Greenwich, London, SE10 9NW, is a historic riverside pub with a rich and storied past. Built in 1837 by architect Joseph Kay, it stands on the site of the Old George Tavern and quickly became a fashionable destination in Victorian London. The tavern was a popular haunt for notable figures such as Charles Dickens, who set the wedding breakfast in his novel Our Mutual Friend in its Hawke Room, and it hosted political whitebait dinners for the Liberal party in the 19th century.\n\nThroughout the 20th century, the building served various purposes, including as a home for aged seamen and a working men's club, before reopening as a pub in 1965. It was restored to its Victorian grandeur in 1968 and designated a Grade II listed building in 1973. Today, the Trafalgar Tavern retains its historical charm with elegant interiors, maritime-themed artworks, and stunning views of the River Thames, making it a unique and picturesque venue for weddings and other celebrations.\n\nWe chose the Trafalgar Tavern as our wedding location because we admire the beauty of the pub. It has been our go-to place for weekends, Sunday roasts, and is like a church to us—being sarcastic, of course. We have celebrated birthdays, Christmases, and witnessed several weddings here until we decided there's no better place for us to host our wedding. We look forward to sharing this friendly, informal setting with our loved ones and ensuring everyone gets immersed in the 'Trafalgar experience'.",
+    "partyTitle": "Wedding Party",
+    "partyTime": "Saturday, June 28, 2025, 14.00 PM @ Trafalgar Tavern",
+    "partyDesc": "We are excited to invite you to join us for our special day at the Trafalgar Tavern! Here are the details:\n\n- Ceremony: The celebration begins at 12 PM in the pub, where we will exchange our vows.\n\n- Meal: After the ceremony, we will enjoy a delightful meal with stunning views of the Thames.\n\n- Reception: Once we've savored the meal, it's time to party, dancing and enjoying the bar.\n\nWe can't wait to share this unforgettable day with you!",
+    "logisticTitle": "Wedding Logistic",
+    "logisticSubtitle": "Where to get to the Trafalgar",
+    "logisticDesc": "Travel from Italy or Greece:\n\nFor our guests traveling from Athens, Greece, or Sardinia, Italy, we recommend flying into one of the following airports:\n\n- London City Airport (LCY): The closest airport to Greenwich, about 30 minutes away by public transport.\n- Heathrow Airport (LHR): A major international hub with excellent connections to central London.\n- Gatwick Airport (LGW): Another major airport with good transport links to central London.\n\nAccommodation Options:\n\nWe have a few accommodation suggestions to make your stay comfortable and enjoyable:\n\n1. Ibis London Greenwich: A budget-friendly option located just a short walk from the Trafalgar Tavern. (https://all.accor.com/hotel/3146/index.en.shtml)\n2. Novotel London Greenwich: A mid-range option nearby. (https://all.accor.com/hotel/3476/index.en.shtml)\n3. Hilton London Canary Wharf: We have arranged a discount for our guests at this hotel in Deptford, which is a quick journey to Greenwich. (https://www.hilton.com/en/hotels/loncwhi-hilton-london-canary-wharf/)\n4. Radisson Blu Edwardian, New Providence Wharf: An upscale option with easy access to Greenwich. (https://www.radissonhotels.com/en-us/hotels/radisson-blu-edwardian-london-new-providence-wharf)\n\nGetting to the Trafalgar Tavern:\n\nThe Trafalgar Tavern is well-connected by various modes of transport:\n\n1. DLR (Docklands Light Railway): The nearest DLR station is Cutty Sark for Maritime Greenwich, which is a short walk from the pub. You can easily connect to the DLR from Canary Wharf, which is on the Jubilee Line.\n2. Uber Boat by Thames Clippers: For a scenic route, take the Uber Boat from central London (e.g., Westminster or North Greenwich) directly to Greenwich Pier, which is a pleasant stroll away from the tavern. (https://www.thamesclippers.com/)\n3. Public Transport: Buses and trains also serve the area well, with frequent services to and from central London.\n\nTransport Apps:\n\nTo help you navigate London, here are some useful transport apps:\n\n1. Citymapper: (https://citymapper.com/london)\n2. Google Maps: (https://maps.google.com)\n3. TfL Go (Transport for London's official app): (https://tfl.gov.uk/maps_/tfl-go)\n\nTaxi Services:\n\nFor convenient travel around London, consider using these taxi services:\n\n1. Gett: (https://www.gett.com/uk/)\n2. Uber: (https://www.uber.com/gb/en/)\n3. FREE NOW: (https://www.free-now.com/uk/)\n\nWe hope these details help you plan your trip and make the most of your time in Greenwich. We can't wait to celebrate with you at the Trafalgar Tavern!",
+    "giftTitle": "No Gift Policy",
+    "giftDesc": "We are truly grateful for your presence on our special day. Your love and support are the greatest gifts we could ask for. Please, no gifts—just join us in celebrating our union"
+  },
+  "rsvp": {
+    "heading": "Are You Attending?",
+    "instructions": "Please fill up the form to notify us that you're attending. Thanks.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your Name",
+    "adultsLabel": "Number of Adults",
+    "adultsPlaceholder": "How many adults?",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Your Email",
+    "kidsLabel": "Number of Kids",
+    "kidsPlaceholder": "How many kids?",
+    "allergiesLabel": "Any Allergies",
+    "allergiesPlaceholder": "Any allergies we should know about?",
+    "attending": "Are you able to join us?",
+    "submit": "Submit"
   }
-  
+}

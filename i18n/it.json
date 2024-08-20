@@ -1,61 +1,69 @@
 {
-    "section": {
-      "weddingTitle": "Il Matrimonio",
-      "names": "Marco & Myrto",
-      "weddingDate": "28.06.2025"
-    },
-    "navigation": {
-        "title": "Matrimonio M&M",
-        "home": "Home",
-        "groombride": "Sposo & Sposa",
-        "whenwhere": "Quando & Dove",
-        "gallery": "Galleria"
-      },
-      "couple": {
-        "groomName": "Marco",
-        "brideName": "Myrto",
-        "heading": "Si sposano",
-        "details": "il 28 giugno 2025 — Londra, Regno Unito"
-      },
-      "groombride": {
-        "title": "Sposo & Sposa",
-        "groomName": "Marco",
-        "groomDescription": "",
-        "brideName": "Myrto",
-        "brideDescription": "Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius..."
-      },
-        "whenwhere": {
-          "ceremonyTitle": "Cerimonia di Matrimonio",
-          "ceremonyTime": "Sabato, 28 Giugno 2025, 12:00 @ Trafalgar Tavern",
-          "ceremonyDesc": "La Trafalgar Tavern, situata in Park Row, Greenwich, Londra, SE10 9NW, è un pub storico lungo il fiume con una ricca e leggendaria storia. Costruita nel 1837 dall'architetto Joseph Kay, sorge sul sito della Old George Tavern e divenne rapidamente una destinazione alla moda nella Londra vittoriana. La taverna era un luogo frequentato da figure di spicco come Charles Dickens, che ambientò il pranzo di nozze nel suo romanzo Il nostro comune amico nella Hawke Room, e ospitò cene politiche di pesce bianco per il partito liberale nel 19° secolo.\n\nNel corso del 20° secolo, l'edificio ha servito vari scopi, tra cui una casa per marinai anziani e un club per lavoratori, prima di riaprire come pub nel 1965. È stato restaurato alla sua grandezza vittoriana nel 1968 e designato edificio di Grado II nel 1973. Oggi, la Trafalgar Tavern conserva il suo fascino storico con interni eleganti, opere d'arte a tema marittimo e splendide viste sul Tamigi, rendendolo una location unica e pittoresca per matrimoni e altre celebrazioni.\n\nAbbiamo scelto la Trafalgar Tavern come luogo del nostro matrimonio perché ammiriamo la bellezza del pub. È stato il nostro luogo preferito per i fine settimana, gli arrosti della domenica, ed è come una chiesa per noi—ovviamente in modo sarcastico. Abbiamo festeggiato compleanni, Natale e assistito a diversi matrimoni qui fino a quando abbiamo deciso che non c'è posto migliore per ospitare il nostro matrimonio. Non vediamo l'ora di condividere questo ambiente amichevole e informale con i nostri cari e di assicurare che tutti si immergano nell'esperienza Trafalgar.",
-          
-          "partyTitle": "Festa di Matrimonio",
-          "partyTime": "Sabato, 28 Giugno 2025, 14:00 @ Trafalgar Tavern",
-          "partyDesc": "Siamo entusiasti di invitarvi a unirvi a noi per il nostro giorno speciale alla Trafalgar Tavern! Ecco i dettagli:\n\n- Cerimonia: La celebrazione inizia alle 12 PM nel pub, dove scambieremo i nostri voti.\n\n- Pasto: Dopo la cerimonia, ci godremo un delizioso pasto con una vista mozzafiato sul Tamigi.\n\n- Ricevimento: Una volta gustato il pasto, è il momento di festeggiare, ballare e godersi il bar.\n\nNon vediamo l'ora di condividere con voi questo giorno indimenticabile!",
-          
-          "logisticTitle": "Logistica del Matrimonio",
-          "logisticSubtitle": "Come arrivare al Trafalgar",
-          "logisticDesc": "Le cerimonie si terranno presso la storica Trafalgar Tavern a Londra, situata nel cuore di Greenwich. Per vostra comodità, suggeriamo di trovare alloggio a Greenwich, North Greenwich o nella zona di Royal Victoria. Queste località offrono un facile accesso alla sede e una varietà di opzioni di alloggio. Per raggiungere Trafalgar Tavern, avete diverse opzioni:\n- **Metro:** Le stazioni della metropolitana più vicine sono North Greenwich (sulla linea Jubilee) e Cutty Sark (sulla linea DLR). Entrambe le stazioni offrono un facile accesso a Greenwich.\n- **Barca:** Potete anche godervi una rotta panoramica prendendo il servizio Thames Clipper River Bus, che ferma al Greenwich Pier. Questo offre un modo unico e pittoresco per arrivare alla sede.\n\nScegliendo alloggi in queste aree suggerite, sarete ben posizionati per unirvi a noi nel nostro giorno speciale ed esplorare i bellissimi dintorni di Greenwich.",
-          
-          "giftTitle": "No Regali",
-          "giftDesc": "Siamo veramente grati per la vostra presenza nel nostro giorno speciale. Il vostro amore e sostegno sono i più grandi doni che potremmo chiedere. Per favore, niente regali—unitevi semplicemente a noi per celebrare la nostra unione.."
-        },
-      "rsvp": {
-        "heading": "Parteciperai?",
-        "instructions": "Si prega di compilare il modulo per comunicarci la vostra partecipazione. Grazie.",
-        "nameLabel": "Nome",
-        "namePlaceholder": "Il tuo nome",
-        "adultsLabel": "Numero di Adulti",
-        "adultsPlaceholder": "Quanti adulti?",
-        "emailLabel": "Email",
-        "emailPlaceholder": "La tua email",
-        "kidsLabel": "Numero di Bambini",
-        "kidsPlaceholder": "Quanti bambini?",
-        "allergiesLabel": "Allergie",
-        "allergiesPlaceholder": "Ci sono allergie che dovremmo conoscere?",
-        "attending": "Sarai dei nostri?",
-        "submit": "Invia"
-    }
-    
+  "page": {
+    "title": "Matrimonio M&M — Dettagli"
+  },
+  "section": {
+    "weddingTitle": "Il Matrimonio",
+    "names": "Marco & Myrto",
+    "weddingDate": "28.06.2025"
+  },
+  "navigation": {
+    "title": "Matrimonio M&M",
+    "home": "Home",
+    "ourstory": "La Nostra Storia",
+    "details": "Dettagli",
+    "gallery": "Galleria"
+  },
+  "whenwhere": {
+    "title": "Quando & Dove",
+    "mainTitle": "Cerimonia di Matrimonio, Ricevimento e Festa",
+    "location": "Trafalgar Tavern, Greenwich, SE10 09W",
+    "ceremonyTitle": "La Cerimonia",
+    "ceremonyDesc": "Unitevi a noi mentre iniziamo il nostro viaggio insieme con una cerimonia civile alle 12 del mezzogiorno presso l'affascinante Trafalgar Tavern.",
+    "mealTitle": "Pasto",
+    "mealDesc": "Dopo la cerimonia, ci riuniremo nella sala da pranzo per un delizioso pasto che ci preparerà per i festeggiamenti.",
+    "partyTitle": "Festa",
+    "partyDesc": "Una volta gustato il pranzo, la celebrazione continuerà con una vivace festa che andrà avanti fino a tarda notte.",
+    "venueLove": "Ci siamo innamorati del Trafalgar Tavern non solo per la sua ricca storia, ma per la sua atmosfera accogliente e le splendide viste sul fiume. Situato nella bellissima area di Greenwich, è il luogo perfetto per il nostro giorno speciale.",
+    "hope": "Speriamo che possiate partecipare e non vediamo l'ora di celebrare il nostro amore con voi."
+  },
+  "faq": {
+    "title": "Domande Frequenti",
+    "travelTitle": "Viaggio dall'Italia o dalla Grecia",
+    "travelDesc": "Se viaggiate dalla Grecia o dall'Italia, vi consigliamo di volare in uno dei seguenti aeroporti:",
+    "lcyDesc": "L'aeroporto più vicino a Greenwich, a circa 30 minuti di distanza con i mezzi pubblici.",
+    "lhrDesc": "Un importante hub internazionale con eccellenti collegamenti con il centro di Londra.",
+    "lgwDesc": "Un altro importante aeroporto con buoni collegamenti di trasporto verso il centro di Londra.",
+    "stnDesc": "Un altro importante aeroporto con buoni collegamenti di trasporto verso il centro di Londra.",
+    "accommodationTitle": "Opzioni di Alloggio",
+    "accommodationDesc": "Abbiamo alcuni suggerimenti per l'alloggio per rendere il vostro soggiorno confortevole e piacevole:",
+    "ibisDesc": "Un'opzione economica situata a pochi passi dal Trafalgar Tavern.",
+    "novotelDesc": "Un'opzione di fascia media nelle vicinanze.",
+    "hiltonDesc": "Abbiamo organizzato uno sconto per i nostri ospiti in questo hotel a Deptford, che è un rapido viaggio verso Greenwich.",
+    "radissonDesc": "Un'opzione di lusso con facile accesso a Greenwich.",
+    "moreInfo": "Maggiori Informazioni",
+    "transportTitle": "Come arrivare al Trafalgar Tavern",
+    "transportDesc": "Il Trafalgar Tavern è ben collegato da vari mezzi di trasporto:",
+    "dlrDesc": "La stazione DLR più vicina è Cutty Sark per Maritime Greenwich, che è a pochi passi dal pub. Puoi facilmente collegarti alla DLR da Canary Wharf, che si trova sulla Jubilee Line.",
+    "boatDesc": "Per un percorso panoramico, prendi l'Uber Boat dal centro di Londra (ad esempio, Westminster o North Greenwich) direttamente al Greenwich Pier, che è a una piacevole passeggiata dalla taverna.",
+    "publicTransportDesc": "Anche autobus e treni servono bene la zona, con servizi frequenti da e per il centro di Londra.",
+    "appsTitle": "App di Trasporto",
+    "appsDesc": "Per aiutarti a navigare Londra, ecco alcune utili app di trasporto:",
+    "taxiTitle": "Servizi Taxi",
+    "taxiDesc": "Per un comodo viaggio a Londra, considera l'utilizzo di questi servizi taxi:"
+  },
+  "rsvp": {
+    "heading": "Parteciperai?",
+    "instructions": "Per favore, compila il modulo per comunicarci che parteciperai. Grazie.",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Il tuo nome",
+    "emailLabel": "Email",
+    "emailPlaceholder": "La tua email",
+    "submit": "Invia"
+  },
+  "footer": {
+    "rightsReserved": "Tutti i Diritti Riservati.",
+    "designedBy": "Progettato da",
+    "images": "Immagini:"
   }
-  
+}
