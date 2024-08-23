@@ -772,16 +772,16 @@ $(document).ready(function() {
 
 		$('#fh5co-page').prepend($clone);
 
-		// click the burger
-		$('.js-fh5co-nav-toggle').on('click', function(){
-
+		$('.js-fh5co-nav-toggle').on('click', function(e){
+			console.log('Burger menu clicked');
+			e.preventDefault();
 			if ( $('body').hasClass('fh5co-offcanvas') ) {
+				console.log('Removing class');
 				$('body').removeClass('fh5co-offcanvas');
 			} else {
+				console.log('Adding class');
 				$('body').addClass('fh5co-offcanvas');
 			}
-			// event.preventDefault();
-
 		});
 
 		$('#offcanvas-menu').css('height', $(window).height());

@@ -1,0 +1,49 @@
+<div class="rsvp-form-container">
+    <h2>Are You Attending?</h2>
+    <p>Please fill out the form to notify us about your attendance. Thanks.</p>
+    
+    <form id="rsvp-form">
+      <div class="form-group">
+        <label for="your-name">Your Name</label>
+        <input type="text" id="your-name" name="your-name" class="form-control" placeholder="Your Name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="your-email">Your Email</label>
+        <input type="email" id="your-email" name="your-email" class="form-control" placeholder="Your Email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="allergies">Any Allergies</label>
+        <textarea id="allergies" name="allergies" class="form-control" placeholder="Any Allergies"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label>Will you be attending?</label>
+        <div class="radio">
+          <label>
+            <input type="radio" name="attending" value="yes" required> Yes
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="attending" value="no" required> No
+          </label>
+        </div>
+      </div>
+      
+      <div id="additional-guests">
+        <!-- Additional guests will be added here dynamically -->
+      </div>
+      
+      <button type="button" id="add-guest" class="btn btn-primary">Add Invited Guest</button>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+    <div id="loading-spinner" class="loading-spinner" style="display:none;">
+      <img src="images/spinner.gif" alt="Loading...">
+    </div>
+  
+    <div id="form-response-message" class="form-response-message"></div>
+  </div>

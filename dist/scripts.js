@@ -778,7 +778,6 @@ google.maps.event.addDomListener(window, 'load', init);
 		return (navigator.platform.indexOf("iPad") != -1);
 	};
 
-
 	var isiPhone = function(){
 	    return (
 			(navigator.platform.indexOf("iPhone") != -1) || 
@@ -788,7 +787,6 @@ google.maps.event.addDomListener(window, 'load', init);
 
 	// Main Menu Superfish
 	var mainMenu = function() {
-
 		$('#fh5co-primary-menu').superfish({
 			delay: 0,
 			animation: {
@@ -798,7 +796,6 @@ google.maps.event.addDomListener(window, 'load', init);
 			cssArrows: true,
 			disableHI: true
 		});
-
 	};
 
 	// Parallax
@@ -808,37 +805,64 @@ google.maps.event.addDomListener(window, 'load', init);
 		}
 	};
 
-
+	var offcanvas = function() {
+		console.log("Initializing offcanvas menu");
+		
+		// Remove any existing offcanvas menu
+		$('#offcanvas-menu').remove();
+		
+		var $clone = $('#fh5co-menu-wrap').clone();
+		$clone.attr({
+			'id': 'offcanvas-menu'
+		});
+		
+		// Preserve the original structure and classes
+		$clone.find('ul.sf-menu').attr('class', 'menu-list').attr('id', '');
+		
+		$('body').append($clone);
+		console.log("Offcanvas menu appended to body");
 	
-	
-	
-
-	// Click outside of the Mobile Menu
-	var mobileMenuOutsideClick = function() {
-		$(document).click(function (e) {
-	    var container = $("#offcanvas-menu, .js-fh5co-nav-toggle");
-	    if (!container.is(e.target) && container.has(e.target).length === 0) {
-	      if ( $('body').hasClass('fh5co-offcanvas') ) {
-				$('body').removeClass('fh5co-offcanvas');
+		$('.js-fh5co-nav-toggle').on('click', function(e) {
+			e.preventDefault();
+			var $body = $('body');
+			var $offcanvasMenu = $('#offcanvas-menu');
+			
+			$body.toggleClass('fh5co-offcanvas');
+			
+			if ($body.hasClass('fh5co-offcanvas')) {
+				console.log("Adding offcanvas class");
+				$offcanvasMenu.css('right', '0');
+			} else {
+				console.log("Removing offcanvas class");
+				$offcanvasMenu.css('right', '-240px');
 			}
-	    }
+		});
+	
+		// Log the contents of the offcanvas menu for debugging
+		console.log("Offcanvas menu contents:", $('#offcanvas-menu').html());
+	}
+
+	var mobileMenuOutsideClick = function() {
+		$(document).on('click', function (e) {
+			var container = $("#offcanvas-menu, .offcanvas-toggle");
+			if (!container.is(e.target) && container.has(e.target).length === 0) {
+				if ($('body').hasClass('fh5co-offcanvas')) {
+					$('body').removeClass('fh5co-offcanvas');
+					$('#offcanvas-menu').css('right', '-240px');
+					console.log("Closing menu from outside click");
+				}
+			}
 		});
 	};
 
-
 	// Animations
-
 	var contentWayPoint = function() {
 		var i = 0;
 		$('.animate-box').waypoint( function( direction ) {
-
 			if( direction === 'down' && !$(this.element).hasClass('animated') ) {
-				
 				i++;
-
 				$(this.element).addClass('item-animate');
 				setTimeout(function(){
-
 					$('body .animate-box.item-animate').each(function(k){
 						var el = $(this);
 						setTimeout( function () {
@@ -846,11 +870,8 @@ google.maps.event.addDomListener(window, 'load', init);
 							el.removeClass('item-animate');
 						},  k * 50, 'easeInOutExpo' );
 					});
-					
 				}, 100);
-				
 			}
-
 		} , { offset: '85%' } );
 	};
 	
@@ -863,109 +884,170 @@ google.maps.event.addDomListener(window, 'load', init);
 		      offset: 0
 		  })
 		}
-	};
+	}; 
 
 	// Set the date we're counting down to
 	var countDownDate = new Date("Jun 28, 2025 12:30:00").getTime();
 
 	// Update the count down every 1 second
 	var x = setInterval(function() {
+		// Get todays date and time
+		var now = new Date().getTime();
 
-	// Get todays date and time
-	var now = new Date().getTime();
+		// Find the distance between now an the count down date
+		var distance = countDownDate - now;
 
-	// Find the distance between now an the count down date
-	var distance = countDownDate - now;
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-	// Time calculations for days, hours, minutes and seconds
-	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+		if (document.getElementById("days") && document.getElementById("hours") && 
+			document.getElementById("minutes") && document.getElementById("seconds")) {
+			document.getElementById("days").innerHTML = days + " <small>days</small>";
+			document.getElementById("hours").innerHTML = hours + " <small>hours</small> ";
+			document.getElementById("minutes").innerHTML = minutes + " <small>minutes</small> ";
+			document.getElementById("seconds").innerHTML = seconds + " <small>seconds</small> ";
+		}
 
-	// Display the result in an element with id="demo"
-	// document.getElementById("demo").innerHTML = days + "Days " + hours + "Hours "
-	// + minutes + "Minutes " + seconds + "Seconds ";
-
-	// Display the result in an element with id="demo"
-	document.getElementById("days").innerHTML = days +" <small>days</small>";
-	document.getElementById("hours").innerHTML = hours + " <small>hours</small> ";
-	document.getElementById("minutes").innerHTML = minutes + " <small>minutes</small> ";
-	document.getElementById("seconds").innerHTML = seconds + " <small>seconds</small> ";
-
-	// If the count down is finished, write some text 
-	if (distance < 0) {
-	 clearInterval(x);
-	 document.getElementById("demo").innerHTML = "The Wedding Ceremony is Over";
-	}
+		// If the count down is finished, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo").innerHTML = "The Wedding Ceremony is Over";
+		}
 	}, 1000);
 
-	// Document on load.
-
-	$(function(){
-		mainMenu();
-		parallax();
-		offcanvas();
-		mobileMenuOutsideClick();
-		contentWayPoint();
-		stickyBanner();
-	});
-
-	document.addEventListener('DOMContentLoaded', function() {
+	function initializeRSVPForm() {
+		const addGuestButton = document.getElementById('add-guest');
+		const additionalGuestsContainer = document.getElementById('additional-guests');
+		let guestCount = 0;
+		const MAX_GUESTS = 3;
+	
+		if (addGuestButton) {
+			addGuestButton.addEventListener('click', function() {
+				if (guestCount < MAX_GUESTS) {
+					addGuestSection();
+				}
+				if (guestCount === MAX_GUESTS) {
+					addGuestButton.style.display = 'none';
+				}
+			});
+		}
+	
+		function addGuestSection() {
+			guestCount++;
+			const guestFields = document.createElement('div');
+			guestFields.classList.add('guest-fields');
+			guestFields.dataset.guestId = guestCount;
+			guestFields.innerHTML = `
+				<h4>Guest ${guestCount}</h4>
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Guest Name" name="guest-name-${guestCount}">
+				</div>
+				<div class="form-group">
+					<textarea class="form-control" placeholder="Any Intolerances" name="guest-intolerances-${guestCount}"></textarea>
+				</div>
+				<div class="form-group">
+					<label>
+						<input type="checkbox" name="guest-is-kid-${guestCount}"> This guest is a kid
+					</label>
+				</div>
+				<button type="button" class="btn btn-danger remove-guest" data-guest-id="${guestCount}">Remove Guest</button>
+			`;
+			additionalGuestsContainer.appendChild(guestFields);
+	
+			const removeButton = guestFields.querySelector('.remove-guest');
+			removeButton.addEventListener('click', function() {
+				removeGuestSection(this.dataset.guestId);
+			});
+		}
+	
+		function removeGuestSection(guestId) {
+			const guestSection = document.querySelector(`.guest-fields[data-guest-id="${guestId}"]`);
+			if (guestSection) {
+				guestSection.remove();
+				guestCount--;
+				if (guestCount < MAX_GUESTS) {
+					addGuestButton.style.display = 'block';
+				}
+			}
+		}
+	
 		var form = document.getElementById('rsvp-form');
-		var spinner = document.getElementById('loading-spinner'); // Get the spinner
+		var spinner = document.getElementById('loading-spinner');
 		var responseMessage = document.getElementById('form-response-message');
 	  
-		form.addEventListener('submit', function(event) {;
-		  event.preventDefault();
-		  event.stopPropagation();
-		  spinner.style.display = 'block'; // Show the spinner
-		  responseMessage.innerText = ''; // Clear previous messages
-	  
-		  var formData = new FormData(form);
-		  formData.append('not_attending', form.querySelector('#attending').checked ? 'yes' : 'no');
-	  
-		  fetch('https://script.google.com/macros/s/AKfycbwbl80QlDMziY4CqsmX1jg_grcXLzznQstWCzrjdqF4ess2ARkPrBk0CO5PvaE1dzjz/exec', {
-			method: 'POST',
-			mode: 'no-cors', // prevent the CORS error
-			body: formData
-		  })
-		  .then(response => {
-			// If response is opaque due to 'no-cors', handle accordingly
-			responseMessage.innerText = 'Form submitted successfully!';
-		  })
-		  .catch(error => {
-			console.error('Error:', error);
-			responseMessage.innerText = 'There was an error submitting the form.';
-		  })
-		  .finally(() => {
-			spinner.style.display = 'none'; // Hide the spinner regardless of outcome
-			form.reset(); // Reset the form to prevent duplicate submissions
-		  });
-		});
-	  });
+		if (form) {
+			form.addEventListener('submit', function(event) {
+				event.preventDefault();
+				event.stopPropagation();
+				spinner.style.display = 'block';
+				responseMessage.innerText = '';
+		  
+				var formData = new FormData(form);
+				formData.append('attending', form.querySelector('input[name="attending"]:checked').value);
+		  
+				fetch('https://script.google.com/macros/s/AKfycbxzO875SHAQrgvtkX7WEhLi2bQRAisa2M8T44Fm5XU4PFwfCyu9Kvwu81WWezc3eOK4/exec', {
+					method: 'POST',
+					mode: 'no-cors',
+					body: formData
+				})
+				.then(response => {
+					responseMessage.innerText = 'Form submitted successfully!';
+				})
+				.catch(error => {
+					console.error('Error:', error);
+					responseMessage.innerText = 'There was an error submitting the form.';
+				})
+				.finally(() => {
+					spinner.style.display = 'none';
+					form.reset();
+					additionalGuestsContainer.innerHTML = '';
+					guestCount = 0;
+					addGuestButton.style.display = 'block';
+				});
+			});
+		}
+	}
 
-	  var translations = {};
+	var translations = {};
 
-	  function loadTranslation(lang) {
-		  fetch(`i18n/${lang}.json`)
-			  .then(response => {
-				  if (!response.ok) {
-					  throw new Error(`HTTP error! Status: ${response.status}`);
-				  }
-				  return response.json();
-			  })
-			  .then(json => {
-				  translations[lang] = json;
-				  console.log(`Loaded translations for ${lang}:`, translations[lang]); // Debugging line
-				  updateContent(lang);
-			  })
-			  .catch(error => {
-				  console.error(`Could not load ${lang} translations:`, error);
-			  });
+	function loadTranslation(lang) {
+		fetch(`i18n/${lang}.json`)
+			.then(response => {
+				if (!response.ok) {
+					throw new Error(`HTTP error! Status: ${response.status}`);
+				}
+				return response.json();
+			})
+			.then(json => {
+				translations[lang] = json;
+				console.log(`Loaded translations for ${lang}:`, translations[lang]);
+				updateContent(lang);
+			})
+			.catch(error => {
+				console.error(`Could not load ${lang} translations:`, error);
+			});
+	}
+
+	function loadHeader() {
+		fetch('header.html')
+		  .then(response => response.text())
+		  .then(data => {
+			const targetElement = document.querySelector('.fh5co-hero');
+			if (targetElement) {
+			  targetElement.insertAdjacentHTML('afterend', data);
+			  offcanvas(); // Re-initialize offcanvas menu after header is loaded
+			} else {
+			  console.error('Target element for header insertion not found');
+			}
+		  })
+		  .catch(error => console.error('Error loading header:', error));
 	  }
+	  
 
-	  function updateContent(lang) {
+	function updateContent(lang) {
 		var elements = document.querySelectorAll('[data-i18n]');
 		elements.forEach(element => {
 			var keys = element.getAttribute('data-i18n').split('.');
@@ -973,14 +1055,12 @@ google.maps.event.addDomListener(window, 'load', init);
 	
 			if (translation) {
 				if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-					element.placeholder = translation; // For input placeholders
+					element.placeholder = translation;
 				} else {
-					element.textContent = translation; // For other elements
+					element.textContent = translation;
 				}
 			} else {
-				// Check if the key is meant for a placeholder
 				if (keys[0] === '[placeholder]') {
-					// Attempt to find the placeholder translation without the prefix
 					var placeholderKey = keys.slice(1).join('.');
 					var placeholderTranslation = translations[lang][placeholderKey];
 					if (placeholderTranslation) {
@@ -995,16 +1075,32 @@ google.maps.event.addDomListener(window, 'load', init);
 		});
 	}
 
-	document.addEventListener('DOMContentLoaded', () => {
-		loadTranslation('en'); // Load default language on DOMContentLoaded
-	
-		// Event listeners for language switch
+	// Document on load.
+	$(function(){
+		console.log("Document ready");
+		mainMenu();
+		parallax();
+		loadHeader();
+		offcanvas();
+		mobileMenuOutsideClick();
+		contentWayPoint();
+		stickyBanner();
+
+		// Initialize translations
+		loadTranslation('en');
 		document.getElementById('lang-en').addEventListener('click', () => loadTranslation('en'));
 		document.getElementById('lang-el').addEventListener('click', () => loadTranslation('el'));
-		document.getElementById('lang-it').addEventListener('click', () => loadTranslation('it')); 
-		// Add similar event listener for other languages if available
-	});
+		document.getElementById('lang-it').addEventListener('click', () => loadTranslation('it'));
 
+		// Fetch and initialize RSVP form
+		fetch('rsvp-form.html')
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('form-container').innerHTML = data;
+				initializeRSVPForm();
+			})
+			.catch(error => console.error('Error loading form:', error));
+	});
 
 }());
 /* Modernizr 2.6.2 (Custom Build) | MIT & BSD
@@ -1791,16 +1887,16 @@ $(document).ready(function() {
 
 		$('#fh5co-page').prepend($clone);
 
-		// click the burger
-		$('.js-fh5co-nav-toggle').on('click', function(){
-
+		$('.js-fh5co-nav-toggle').on('click', function(e){
+			console.log('Burger menu clicked');
+			e.preventDefault();
 			if ( $('body').hasClass('fh5co-offcanvas') ) {
+				console.log('Removing class');
 				$('body').removeClass('fh5co-offcanvas');
 			} else {
+				console.log('Adding class');
 				$('body').addClass('fh5co-offcanvas');
 			}
-			// event.preventDefault();
-
 		});
 
 		$('#offcanvas-menu').css('height', $(window).height());

@@ -72,25 +72,6 @@
 				</div>
 			</div>
 
-			<header id="fh5co-header-section" class="sticky-banner">
-				<div class="container">
-					<div class="nav-header">
-						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-						<h1 id="fh5co-logo"><a href="index.html" data-i18n="navigation.title">M&M Wedding</a></h1>
-						<!-- START #fh5co-menu-wrap -->
-						<nav id="fh5co-menu-wrap" role="navigation">
-							<ul class="sf-menu" id="fh5co-primary-menu">
-								<li><a href="index.html" data-i18n="navigation.home">Home</a></li>
-								<li><a href="our-story.html" i18n="navigation.ourstory">Our Story</a></li>
-								<li><a href="details.html" i18n="navigation.details">Details</a></li>
-								<li class="active"><a href="gallery.html" data-i18n="navigation.gallery">Gallery</a></li>
-							</ul>
-						</nav>
-					</div>
-
-				</div>
-			</header>
-
 		<!-- end:header-top -->
 
 		<div id="fh5co-gallery">
@@ -135,72 +116,19 @@
 		<div id="fh5co-started" style="background-image:url(images/cover_bg_2.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section">
-						<h2 data-i18n="rsvp.heading">Are You Attending?</h2>
-						<p data-i18n="rsvp.instructions">Please Fill-up the form to notify you that you're
-							attending. Thanks.</p>
-					</div>
+			  <div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center heading-section">
+				  <h2>Are You Attending?</h2>
+				  <p>Please fill out the form to notify us that you're attending. Thanks.</p>
 				</div>
-				<div class="row animate-box">
-					<div class="col-md-10 col-md-offset-1">
-						<form class="form-inline" id="rsvp-form">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">
-										<label for="participant_names" class="sr-only"
-											data-i18n="rsvp.nameLabel">Name</label>
-										<input type="text" class="form-control" id="participant_names"
-											name="participant_names" placeholder=""
-											data-i18n="rsvp.namePlaceholder">
-									</div>
-									<div class="form-group">
-										<label for="adults_number" class="sr-only"
-											data-i18n="rsvp.adultsLabel">Number of Adults</label>
-										<input type="number" class="form-control" id="adults_number"
-											name="adults_number" placeholder="" data-i18n="rsvp.adultsPlaceholder">
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label for="email" class="sr-only" data-i18n="rsvp.emailLabel">Email</label>
-										<input type="email" class="form-control" id="email" name="email"
-											placeholder="" data-i18n="rsvp.emailPlaceholder">
-									</div>
-									<div class="form-group">
-										<label for="children_number" class="sr-only"
-											data-i18n="rsvp.kidsLabel">Number of Kids</label>
-										<input type="number" class="form-control" id="children_number"
-											name="children_number" placeholder="" data-i18n="rsvp.kidsPlaceholder">
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label for="allergies" class="sr-only" data-i18n="rsvp.allergiesLabel">Any
-											Allergies</label>
-										<input type="text" class="form-control" id="allergies" name="allergies"
-											placeholder="" data-i18n="rsvp.allergiesPlaceholder">
-									</div>
-									<div class="form-group">
-										<div class="checkbox">
-											<label data-i18n="rsvp.attending"></label>
-											<input type="checkbox" id="attending" name="attending" value="yes">
-										</div>
-									</div>
-									<button type="submit" class="btn btn-primary btn-block"
-										data-i18n="rsvp.submit">Submit</button>
-								</div>
-							</div>
-						</form>
-						<!-- Spinner HTML, hidden by default with 'display: none' -->
-						<div id="loading-spinner" class="loading-spinner">
-							<img src="images/spinner.gif" alt="Loading..." />
-						</div>
-						<div class="form-response-message" id="form-response-message"></div>
-					</div>
+			  </div>
+			  <div class="row animate-box">
+				<div class="col-md-10 col-md-offset-1">
+				  <div id="form-container"></div> <!-- Form will be loaded here -->
 				</div>
+			  </div>
 			</div>
-		</div>
+		  </div>
 
 		<footer>
 			<div id="footer">
