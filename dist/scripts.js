@@ -991,7 +991,7 @@ google.maps.event.addDomListener(window, 'load', init);
 					formData.append('guest_is_kid_' + guestIndex, field.querySelector('[name^="guest-is-kid-"]').checked ? 'on' : 'off');
 				});
 
-				fetch('https://script.google.com/macros/s/AKfycbw3KEWjBA_W00-BNSesDNoWQ-dEJA0eHfsREn3M-b8bUbkHHkxzXw8wZnMwLh2HA7Ft/exec', {
+				fetch('https://script.google.com/macros/s/AKfycbyeBF_baU98qX7dfZiCWkf2EHczJsSi_xP74WXjMIELOAt8qnvb0bvEIKPnT1RxpXeR/exec', {
 					method: 'POST',
 					mode: 'no-cors',
 					body: formData
