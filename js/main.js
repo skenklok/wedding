@@ -142,23 +142,119 @@
 	}, 1000);
 
 	function initializeRSVPForm() {
+		const form = document.getElementById('rsvp-form');
 		const addGuestButton = document.getElementById('add-guest');
 		const additionalGuestsContainer = document.getElementById('additional-guests');
+		const spinner = document.getElementById('loading-spinner');
+		const responseMessage = document.getElementById('form-response-message');
+
 		let guestCount = 0;
 		const MAX_GUESTS = 3;
 
 		if (addGuestButton) {
-			addGuestButton.addEventListener('click', function () {
-				if (guestCount < MAX_GUESTS) {
-					addGuestSection();
+			addGuestButton.addEventListener('click', addGuestSection);
+		}
+
+		if (form) {
+			form.addEventListener('submit', validateAndSubmitForm);
+		}
+
+		function validateAndSubmitForm(event) {
+			event.preventDefault();
+			event.stopPropagation();
+
+			if (validateForm()) {
+				submitForm();
+			}
+		}
+
+		function validateForm() {
+			let isValid = true;
+
+			// Validate name
+			const nameInput = document.getElementById('your-name');
+			if (!nameInput.value.trim()) {
+				showError(nameInput, 'Name is required');
+				isValid = false;
+			} else {
+				clearError(nameInput);
+			}
+
+			// Validate email
+			const emailInput = document.getElementById('your-email');
+			if (!emailInput.value.trim()) {
+				showError(emailInput, 'Email is required');
+				isValid = false;
+			} else if (!isValidEmail(emailInput.value)) {
+				showError(emailInput, 'Please enter a valid email address');
+				isValid = false;
+			} else {
+				clearError(emailInput);
+			}
+
+			// Validate attending radio buttons
+			const attendingRadios = document.getElementsByName('attending');
+			let attendingChecked = false;
+			for (let radio of attendingRadios) {
+				if (radio.checked) {
+					attendingChecked = true;
+					break;
 				}
-				if (guestCount === MAX_GUESTS) {
-					addGuestButton.style.display = 'none';
+			}
+			if (!attendingChecked) {
+				showError(attendingRadios[0], 'Please select whether you are attending');
+				isValid = false;
+			} else {
+				clearError(attendingRadios[0]);
+			}
+
+			// Validate guest fields
+			const guestFields = document.querySelectorAll('.guest-fields');
+			guestFields.forEach((field, index) => {
+				const guestName = field.querySelector(`[name^="guest-name-"]`);
+				if (!guestName.value.trim()) {
+					showError(guestName, 'Guest name is required');
+					isValid = false;
+				} else {
+					clearError(guestName);
 				}
 			});
+
+			return isValid;
+		}
+
+		function showError(input, message) {
+			let errorElement = input.parentElement.querySelector('.error-message');
+			if (!errorElement) {
+				errorElement = document.createElement('div');
+				errorElement.className = 'error-message';
+				input.parentElement.appendChild(errorElement);
+			}
+			errorElement.textContent = message;
+			errorElement.style.display = 'block';
+			input.classList.add('error-input');
+		}
+
+		function clearError(input) {
+			const errorElement = input.parentElement.querySelector('.error-message');
+			if (errorElement) {
+				errorElement.textContent = '';
+				errorElement.style.display = 'none';
+			}
+			input.classList.remove('error-input');
+		}
+
+		function isValidEmail(email) {
+			const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(String(email).toLowerCase());
 		}
 
 		function addGuestSection() {
+			if (guestCount >= MAX_GUESTS) {
+				alert('Maximum number of additional guests reached.');
+				return;
+			}
+
 			guestCount++;
 			const guestFields = document.createElement('div');
 			guestFields.classList.add('guest-fields');
@@ -184,6 +280,10 @@
 			removeButton.addEventListener('click', function () {
 				removeGuestSection(this.dataset.guestId);
 			});
+
+			if (guestCount === MAX_GUESTS) {
+				addGuestButton.style.display = 'none';
+			}
 		}
 
 		function removeGuestSection(guestId) {
@@ -197,53 +297,56 @@
 			}
 		}
 
-		var form = document.getElementById('rsvp-form');
-		var spinner = document.getElementById('loading-spinner');
-		var responseMessage = document.getElementById('form-response-message');
-
-		if (form) {
-			form.addEventListener('submit', function (event) {
-				event.preventDefault();
-				event.stopPropagation();
-				spinner.style.display = 'block';
-				responseMessage.innerText = '';
-
-				var formData = new FormData(form);
-				formData.append('attending', form.querySelector('input[name="attending"]:checked').value);
-
-				// Add guest information
-				var guestFields = form.querySelectorAll('.guest-fields');
-				guestFields.forEach(function (field, index) {
-					var guestIndex = index + 1;
-					formData.append('guest-name-' + guestIndex, field.querySelector('[name^="guest-name-"]').value);
-					formData.append('guest-intolerances-' + guestIndex, field.querySelector('[name^="guest-intolerances-"]').value);
-					formData.append('guest_is_kid_' + guestIndex, field.querySelector('[name^="guest-is-kid-"]').checked ? 'on' : 'off');
-				});
-
-				fetch('https://script.google.com/macros/s/AKfycbyeBF_baU98qX7dfZiCWkf2EHczJsSi_xP74WXjMIELOAt8qnvb0bvEIKPnT1RxpXeR/exec', {
-					method: 'POST',
-					mode: 'no-cors',
-					body: formData
-				})
-					.then(response => {
-						responseMessage.innerText = 'Form submitted successfully!';
-					})
-					.catch(error => {
-						console.error('Error:', error);
-						responseMessage.innerText = 'There was an error submitting the form.';
-					})
-					.finally(() => {
-						spinner.style.display = 'none';
-						form.reset();
-						var additionalGuestsContainer = document.getElementById('additional-guests');
-						additionalGuestsContainer.innerHTML = '';
-						var addGuestButton = document.getElementById('add-guest');
-						if (addGuestButton) {
-							addGuestButton.style.display = 'block';
-						}
-					});
+		function submitForm() {
+			spinner.style.display = 'block';
+			responseMessage.style.display = 'none';
+		
+			var formData = new FormData(form);
+			formData.append('attending', form.querySelector('input[name="attending"]:checked').value);
+		
+			// Add guest information
+			var guestFields = form.querySelectorAll('.guest-fields');
+			guestFields.forEach(function(field, index) {
+				var guestIndex = index + 1;
+				formData.append('guest-name-' + guestIndex, field.querySelector('[name^="guest-name-"]').value);
+				formData.append('guest-intolerances-' + guestIndex, field.querySelector('[name^="guest-intolerances-"]').value);
+				formData.append('guest_is_kid_' + guestIndex, field.querySelector('[name^="guest-is-kid-"]').checked ? 'on' : 'off');
+			});
+		
+			fetch('https://script.google.com/macros/s/AKfycbyeBF_baU98qX7dfZiCWkf2EHczJsSi_xP74WXjMIELOAt8qnvb0bvEIKPnT1RxpXeR/exec', {
+				method: 'POST',
+				mode: 'no-cors',
+				body: formData
+			})
+			.then(response => {
+				showResponseMessage('success', 'Thank You!', 'Your RSVP has been successfully submitted. We look forward to celebrating with you!');
+			})
+			.catch(error => {
+				console.error('Error:', error);
+				showResponseMessage('error', 'Oops!', 'There was an error submitting the form. Please try again or contact us directly.');
+			})
+			.finally(() => {
+				spinner.style.display = 'none';
+				form.reset();
+				additionalGuestsContainer.innerHTML = '';
+				guestCount = 0;
+				addGuestButton.style.display = 'block';
+				scrollToElement(responseMessage);
 			});
 		}
+		
+		function showResponseMessage(type, title, message) {
+			responseMessage.className = 'form-response-message ' + type + ' animated';
+			responseMessage.querySelector('.response-title').textContent = title;
+			responseMessage.querySelector('.response-text').textContent = message;
+			responseMessage.style.display = 'block';
+		}
+		
+		function scrollToElement(element) {
+			element.scrollIntoView({behavior: 'smooth', block: 'center'});
+		}
+
+			
 	}
 
 	var translations = {};
