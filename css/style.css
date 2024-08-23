@@ -1357,6 +1357,7 @@ body.fh5co-offcanvas #fh5co-page {
   padding: 10px 20px;
   color: #fff;
   font-weight: bold;
+  text-transform: uppercase;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -1391,8 +1392,17 @@ body.fh5co-offcanvas #fh5co-page {
 }
 
 @media (max-width: 768px) {
-  .rsvp-form-container {
-    padding: 20px;
+    .rsvp-form-container {
+      padding: 20px;
+    }
+
+    .button-container {
+      flex-direction: column;
+
+    .button-container .btn {
+      width: 100%;
+      margin: 10px 0;
+    }
   }
 }
 .radio {
@@ -1407,4 +1417,17 @@ body.fh5co-offcanvas #fh5co-page {
 
 .radio input[type="radio"] {
   margin-right: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button-container .btn {
+  flex: 1 !important;
+  margin: 0 10px !important;
+  width: auto !important; /* Override any fixed width */
 }

@@ -769,24 +769,24 @@ function init() {
 google.maps.event.addDomListener(window, 'load', init);
 
 }
-;(function () {
-	
+; (function () {
+
 	'use strict';
 
 	// iPad and iPod detection	
-	var isiPad = function(){
+	var isiPad = function () {
 		return (navigator.platform.indexOf("iPad") != -1);
 	};
 
-	var isiPhone = function(){
-	    return (
-			(navigator.platform.indexOf("iPhone") != -1) || 
+	var isiPhone = function () {
+		return (
+			(navigator.platform.indexOf("iPhone") != -1) ||
 			(navigator.platform.indexOf("iPod") != -1)
-	    );
+		);
 	};
 
 	// Main Menu Superfish
-	var mainMenu = function() {
+	var mainMenu = function () {
 		$('#fh5co-primary-menu').superfish({
 			delay: 0,
 			animation: {
@@ -799,98 +799,92 @@ google.maps.event.addDomListener(window, 'load', init);
 	};
 
 	// Parallax
-	var parallax = function() {
-		if ( !isiPad() || !isiPhone() ) {
+	var parallax = function () {
+		if (!isiPad() || !isiPhone()) {
 			$(window).stellar();
 		}
 	};
 
-	var offcanvas = function() {
-		console.log("Initializing offcanvas menu");
-		
+	var offcanvas = function () {
+
 		// Remove any existing offcanvas menu
 		$('#offcanvas-menu').remove();
-		
+
 		var $clone = $('#fh5co-menu-wrap').clone();
 		$clone.attr({
 			'id': 'offcanvas-menu'
 		});
-		
+
 		// Preserve the original structure and classes
 		$clone.find('ul.sf-menu').attr('class', 'menu-list').attr('id', '');
-		
+
 		$('body').append($clone);
-		console.log("Offcanvas menu appended to body");
-	
-		$('.js-fh5co-nav-toggle').on('click', function(e) {
+
+
+		$('.js-fh5co-nav-toggle').on('click', function (e) {
 			e.preventDefault();
 			var $body = $('body');
 			var $offcanvasMenu = $('#offcanvas-menu');
-			
+
 			$body.toggleClass('fh5co-offcanvas');
-			
+
 			if ($body.hasClass('fh5co-offcanvas')) {
-				console.log("Adding offcanvas class");
 				$offcanvasMenu.css('right', '0');
 			} else {
-				console.log("Removing offcanvas class");
 				$offcanvasMenu.css('right', '-240px');
 			}
 		});
-	
-		// Log the contents of the offcanvas menu for debugging
-		console.log("Offcanvas menu contents:", $('#offcanvas-menu').html());
+
 	}
 
-	var mobileMenuOutsideClick = function() {
+	var mobileMenuOutsideClick = function () {
 		$(document).on('click', function (e) {
 			var container = $("#offcanvas-menu, .offcanvas-toggle");
 			if (!container.is(e.target) && container.has(e.target).length === 0) {
 				if ($('body').hasClass('fh5co-offcanvas')) {
 					$('body').removeClass('fh5co-offcanvas');
 					$('#offcanvas-menu').css('right', '-240px');
-					console.log("Closing menu from outside click");
 				}
 			}
 		});
 	};
 
 	// Animations
-	var contentWayPoint = function() {
+	var contentWayPoint = function () {
 		var i = 0;
-		$('.animate-box').waypoint( function( direction ) {
-			if( direction === 'down' && !$(this.element).hasClass('animated') ) {
+		$('.animate-box').waypoint(function (direction) {
+			if (direction === 'down' && !$(this.element).hasClass('animated')) {
 				i++;
 				$(this.element).addClass('item-animate');
-				setTimeout(function(){
-					$('body .animate-box.item-animate').each(function(k){
+				setTimeout(function () {
+					$('body .animate-box.item-animate').each(function (k) {
 						var el = $(this);
-						setTimeout( function () {
+						setTimeout(function () {
 							el.addClass('fadeInUp animated');
 							el.removeClass('item-animate');
-						},  k * 50, 'easeInOutExpo' );
+						}, k * 50, 'easeInOutExpo');
 					});
 				}, 100);
 			}
-		} , { offset: '85%' } );
+		}, { offset: '85%' });
 	};
-	
-	var stickyBanner = function() {
+
+	var stickyBanner = function () {
 		var $stickyElement = $('.sticky-banner');
 		var sticky;
 		if ($stickyElement.length) {
-		  sticky = new Waypoint.Sticky({
-		      element: $stickyElement[0],
-		      offset: 0
-		  })
+			sticky = new Waypoint.Sticky({
+				element: $stickyElement[0],
+				offset: 0
+			})
 		}
-	}; 
+	};
 
 	// Set the date we're counting down to
 	var countDownDate = new Date("Jun 28, 2025 12:30:00").getTime();
 
 	// Update the count down every 1 second
-	var x = setInterval(function() {
+	var x = setInterval(function () {
 		// Get todays date and time
 		var now = new Date().getTime();
 
@@ -903,7 +897,7 @@ google.maps.event.addDomListener(window, 'load', init);
 		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-		if (document.getElementById("days") && document.getElementById("hours") && 
+		if (document.getElementById("days") && document.getElementById("hours") &&
 			document.getElementById("minutes") && document.getElementById("seconds")) {
 			document.getElementById("days").innerHTML = days + " <small>days</small>";
 			document.getElementById("hours").innerHTML = hours + " <small>hours</small> ";
@@ -923,9 +917,9 @@ google.maps.event.addDomListener(window, 'load', init);
 		const additionalGuestsContainer = document.getElementById('additional-guests');
 		let guestCount = 0;
 		const MAX_GUESTS = 3;
-	
+
 		if (addGuestButton) {
-			addGuestButton.addEventListener('click', function() {
+			addGuestButton.addEventListener('click', function () {
 				if (guestCount < MAX_GUESTS) {
 					addGuestSection();
 				}
@@ -934,7 +928,7 @@ google.maps.event.addDomListener(window, 'load', init);
 				}
 			});
 		}
-	
+
 		function addGuestSection() {
 			guestCount++;
 			const guestFields = document.createElement('div');
@@ -956,13 +950,13 @@ google.maps.event.addDomListener(window, 'load', init);
 				<button type="button" class="btn btn-danger remove-guest" data-guest-id="${guestCount}">Remove Guest</button>
 			`;
 			additionalGuestsContainer.appendChild(guestFields);
-	
+
 			const removeButton = guestFields.querySelector('.remove-guest');
-			removeButton.addEventListener('click', function() {
+			removeButton.addEventListener('click', function () {
 				removeGuestSection(this.dataset.guestId);
 			});
 		}
-	
+
 		function removeGuestSection(guestId) {
 			const guestSection = document.querySelector(`.guest-fields[data-guest-id="${guestId}"]`);
 			if (guestSection) {
@@ -973,40 +967,52 @@ google.maps.event.addDomListener(window, 'load', init);
 				}
 			}
 		}
-	
+
 		var form = document.getElementById('rsvp-form');
 		var spinner = document.getElementById('loading-spinner');
 		var responseMessage = document.getElementById('form-response-message');
-	  
+
 		if (form) {
-			form.addEventListener('submit', function(event) {
+			form.addEventListener('submit', function (event) {
 				event.preventDefault();
 				event.stopPropagation();
 				spinner.style.display = 'block';
 				responseMessage.innerText = '';
-		  
+
 				var formData = new FormData(form);
 				formData.append('attending', form.querySelector('input[name="attending"]:checked').value);
-		  
-				fetch('https://script.google.com/macros/s/AKfycbxzO875SHAQrgvtkX7WEhLi2bQRAisa2M8T44Fm5XU4PFwfCyu9Kvwu81WWezc3eOK4/exec', {
+
+				// Add guest information
+				var guestFields = form.querySelectorAll('.guest-fields');
+				guestFields.forEach(function (field, index) {
+					var guestIndex = index + 1;
+					formData.append('guest-name-' + guestIndex, field.querySelector('[name^="guest-name-"]').value);
+					formData.append('guest-intolerances-' + guestIndex, field.querySelector('[name^="guest-intolerances-"]').value);
+					formData.append('guest_is_kid_' + guestIndex, field.querySelector('[name^="guest-is-kid-"]').checked ? 'on' : 'off');
+				});
+
+				fetch('https://script.google.com/macros/s/AKfycbw3KEWjBA_W00-BNSesDNoWQ-dEJA0eHfsREn3M-b8bUbkHHkxzXw8wZnMwLh2HA7Ft/exec', {
 					method: 'POST',
 					mode: 'no-cors',
 					body: formData
 				})
-				.then(response => {
-					responseMessage.innerText = 'Form submitted successfully!';
-				})
-				.catch(error => {
-					console.error('Error:', error);
-					responseMessage.innerText = 'There was an error submitting the form.';
-				})
-				.finally(() => {
-					spinner.style.display = 'none';
-					form.reset();
-					additionalGuestsContainer.innerHTML = '';
-					guestCount = 0;
-					addGuestButton.style.display = 'block';
-				});
+					.then(response => {
+						responseMessage.innerText = 'Form submitted successfully!';
+					})
+					.catch(error => {
+						console.error('Error:', error);
+						responseMessage.innerText = 'There was an error submitting the form.';
+					})
+					.finally(() => {
+						spinner.style.display = 'none';
+						form.reset();
+						var additionalGuestsContainer = document.getElementById('additional-guests');
+						additionalGuestsContainer.innerHTML = '';
+						var addGuestButton = document.getElementById('add-guest');
+						if (addGuestButton) {
+							addGuestButton.style.display = 'block';
+						}
+					});
 			});
 		}
 	}
@@ -1023,7 +1029,6 @@ google.maps.event.addDomListener(window, 'load', init);
 			})
 			.then(json => {
 				translations[lang] = json;
-				console.log(`Loaded translations for ${lang}:`, translations[lang]);
 				updateContent(lang);
 			})
 			.catch(error => {
@@ -1033,26 +1038,26 @@ google.maps.event.addDomListener(window, 'load', init);
 
 	function loadHeader() {
 		fetch('header.html')
-		  .then(response => response.text())
-		  .then(data => {
-			const targetElement = document.querySelector('.fh5co-hero');
-			if (targetElement) {
-			  targetElement.insertAdjacentHTML('afterend', data);
-			  offcanvas(); // Re-initialize offcanvas menu after header is loaded
-			} else {
-			  console.error('Target element for header insertion not found');
-			}
-		  })
-		  .catch(error => console.error('Error loading header:', error));
-	  }
-	  
+			.then(response => response.text())
+			.then(data => {
+				const targetElement = document.querySelector('.fh5co-hero');
+				if (targetElement) {
+					targetElement.insertAdjacentHTML('afterend', data);
+					offcanvas(); // Re-initialize offcanvas menu after header is loaded
+				} else {
+					console.error('Target element for header insertion not found');
+				}
+			})
+			.catch(error => console.error('Error loading header:', error));
+	}
+
 
 	function updateContent(lang) {
 		var elements = document.querySelectorAll('[data-i18n]');
 		elements.forEach(element => {
 			var keys = element.getAttribute('data-i18n').split('.');
 			var translation = keys.reduce((obj, key) => obj && obj[key], translations[lang]);
-	
+
 			if (translation) {
 				if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
 					element.placeholder = translation;
@@ -1076,8 +1081,7 @@ google.maps.event.addDomListener(window, 'load', init);
 	}
 
 	// Document on load.
-	$(function(){
-		console.log("Document ready");
+	$(function () {
 		mainMenu();
 		parallax();
 		loadHeader();
