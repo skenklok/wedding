@@ -1,57 +1,57 @@
 <div class="rsvp-form-container">
-    <h2>Are You Attending?</h2>
-    <p>Please fill out the form to notify us about your attendance. Thanks.</p>
-    
-    <form id="rsvp-form">
-      <div class="form-group">
-        <label for="your-name">Your Name</label>
-        <input type="text" id="your-name" name="your-name" class="form-control" placeholder="Your Name" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="your-email">Your Email</label>
-        <input type="email" id="your-email" name="your-email" class="form-control" placeholder="Your Email" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="allergies">Any Allergies</label>
-        <textarea id="allergies" name="allergies" class="form-control" placeholder="Any Allergies"></textarea>
-      </div>
-      
-      <div class="form-group">
-        <label>Will you be attending?</label>
-        <div class="radio">
-          <label>
-            <input type="radio" name="attending" value="yes" required> Yes
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="attending" value="no" required> No
-          </label>
-        </div>
-      </div>
-      
-      <div id="additional-guests">
-        <!-- Additional guests will be added here dynamically -->
-      </div>
-      
-      <div class="button-container">
-        <button type="button" id="add-guest" class="btn btn-primary">ADD INVITED GUEST</button>
-        <button type="submit" class="btn btn-primary">SUBMIT</button>
-    </div>
-
-    </form>
-    
-    <div id="loading-spinner" class="loading-spinner" style="display:none;">
-      <img src="images/spinner.gif" alt="Loading...">
-    </div>
+  <h2 data-i18n="rsvp.heading">Are You Attending?</h2>
+  <p data-i18n="rsvp.instructions">Please fill out the form to notify us about your attendance. Thanks.</p>
   
-    <div id="form-response-message" class="form-response-message" style="display: none;">
-      <div class="response-content">
-        <i class="response-icon"></i>
-        <h3 class="response-title"></h3>
-        <p class="response-text"></p>
+  <form id="rsvp-form">
+    <div class="form-group">
+      <label for="your-name" data-i18n="rsvp.nameLabel">Your Name</label>
+      <input type="text" id="your-name" name="your-name" class="form-control" data-i18n="[placeholder]rsvp.namePlaceholder" placeholder="Your Name" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="your-email" data-i18n="rsvp.emailLabel">Your Email</label>
+      <input type="email" id="your-email" name="your-email" class="form-control" data-i18n="[placeholder]rsvp.emailPlaceholder" placeholder="Your Email" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="allergies" data-i18n="rsvp.allergiesLabel">Any Allergies</label>
+      <textarea id="allergies" name="allergies" class="form-control" data-i18n="[placeholder]rsvp.allergiesPlaceholder" placeholder="Any Allergies"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label data-i18n="rsvp.attendingQuestion">Will you be attending?</label>
+      <div class="radio">
+        <label>
+          <input type="radio" name="attending" value="yes" required> <span data-i18n="rsvp.attendingYes">Yes</span>
+        </label>
       </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="attending" value="no" required> <span data-i18n="rsvp.attendingNo">No</span>
+        </label>
+      </div>
+    </div>
+    
+    <div id="additional-guests">
+      <!-- Additional guests will be added here dynamically -->
+    </div>
+    
+    <div class="button-container">
+      <button type="button" id="add-guest" class="btn btn-primary" data-i18n="rsvp.addGuest">ADD INVITED GUEST</button>
+      <button type="submit" class="btn btn-primary" data-i18n="rsvp.submit">SUBMIT</button>
+  </div>
+
+  </form>
+  
+  <div id="loading-spinner" class="loading-spinner" style="display:none;">
+    <img src="images/spinner.gif" data-i18n="[alt]rsvp.loading" alt="Loading...">
+  </div>
+
+  <div id="form-response-message" class="form-response-message" style="display: none;">
+    <div class="response-content">
+      <i class="response-icon"></i>
+      <h3 class="response-title" data-i18n="rsvp.responseTitle"></h3>
+      <p class="response-text" data-i18n="rsvp.responseText"></p>
     </div>
   </div>
+</div>

@@ -53,7 +53,6 @@
     "taxiDesc": "Per un comodo viaggio a Londra, considera l'utilizzo di questi servizi taxi:",
     "giftTitle": "No Gift Policy",
     "giftDesc": "Siamo davvero grati per la vostra presenza nel nostro giorno speciale. Il vostro amore e sostegno sono i regali più preziosi che potessimo desiderare. Per favore, niente regali — unitevi a noi per celebrare il nostro matrimonio."
-
   },
   "rsvp": {
     "heading": "Parteciperai?",
@@ -62,7 +61,21 @@
     "namePlaceholder": "Il tuo nome",
     "emailLabel": "Email",
     "emailPlaceholder": "La tua email",
-    "submit": "Invia"
+    "allergiesLabel": "Allergie",
+    "allergiesPlaceholder": "Eventuali allergie o intolleranze",
+    "attendingQuestion": "Parteciperai?",
+    "attendingYes": "Sì",
+    "attendingNo": "No",
+    "addGuest": "AGGIUNGI OSPITE INVITATO",
+    "submit": "INVIA",
+    "loading": "Caricamento...",
+    "responseTitle": "Grazie!",
+    "responseText": "La tua risposta è stata inviata con successo.",
+    "guestHeading": "Ospite",
+    "guestNamePlaceholder": "Nome dell'ospite",
+    "guestIntolerancesPlaceholder": "Eventuali intolleranze",
+    "guestIsKid": "Questo ospite è un bambino",
+    "removeGuest": "Rimuovi ospite"
   },
   "footer": {
     "rightsReserved": "Tutti i Diritti Riservati.",

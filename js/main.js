@@ -286,20 +286,21 @@
 			guestFields.classList.add('guest-fields');
 			guestFields.dataset.guestId = guestCount;
 			guestFields.innerHTML = `
-				<h4>Guest ${guestCount}</h4>
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Guest Name" name="guest-name-${guestCount}">
-				</div>
-				<div class="form-group">
-					<textarea class="form-control" placeholder="Any Intolerances" name="guest-intolerances-${guestCount}"></textarea>
-				</div>
-				<div class="form-group">
-					<label>
-						<input type="checkbox" name="guest-is-kid-${guestCount}"> This guest is a kid
-					</label>
-				</div>
-				<button type="button" class="btn btn-danger remove-guest" data-guest-id="${guestCount}">Remove Guest</button>
-			`;
+			<h4 data-i18n="rsvp.guestHeading">Guest ${guestCount}</h4>
+			<div class="form-group">
+				<input type="text" class="form-control" data-i18n="[placeholder]rsvp.guestNamePlaceholder" placeholder="Guest Name" name="guest-name-${guestCount}">
+			</div>
+			<div class="form-group">
+				<textarea class="form-control" data-i18n="[placeholder]rsvp.guestIntolerancesPlaceholder" placeholder="Any Intolerances" name="guest-intolerances-${guestCount}"></textarea>
+			</div>
+			<div class="form-group">
+				<label>
+					<input type="checkbox" name="guest-is-kid-${guestCount}">
+					<span data-i18n="rsvp.guestIsKid">This guest is a kid</span>
+				</label>
+			</div>
+			<button type="button" class="btn btn-danger remove-guest" data-guest-id="${guestCount}" data-i18n="rsvp.removeGuest">Remove Guest</button>
+		`;
 			additionalGuestsContainer.appendChild(guestFields);
 
 			const removeButton = guestFields.querySelector('.remove-guest');
