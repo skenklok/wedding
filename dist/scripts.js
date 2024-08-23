@@ -946,7 +946,7 @@ google.maps.event.addDomListener(window, 'load', init);
 		const responseMessage = document.getElementById('form-response-message');
 
 		let guestCount = 0;
-		const MAX_GUESTS = 3;
+		const MAX_GUESTS = 5;
 
 		if (addGuestButton) {
 			addGuestButton.addEventListener('click', addGuestSection);
