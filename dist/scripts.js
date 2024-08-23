@@ -773,6 +773,32 @@ google.maps.event.addDomListener(window, 'load', init);
 
 	'use strict';
 
+	function smoothScroll(targetSelector, duration) {
+		var target = document.querySelector(targetSelector);
+		if (!target) return;
+		var targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+		var startPosition = window.pageYOffset;
+		var distance = targetPosition - startPosition;
+		var startTime = null;
+
+		function animation(currentTime) {
+			if (startTime === null) startTime = currentTime;
+			var timeElapsed = currentTime - startTime;
+			var run = ease(timeElapsed, startPosition, distance, duration);
+			window.scrollTo(0, run);
+			if (timeElapsed < duration) requestAnimationFrame(animation);
+		}
+
+		function ease(t, b, c, d) {
+			t /= d / 2;
+			if (t < 1) return c / 2 * t * t + b;
+			t--;
+			return -c / 2 * (t * (t - 2) - 1) + b;
+		}
+
+		requestAnimationFrame(animation);
+	}
+
 	// iPad and iPod detection	
 	var isiPad = function () {
 		return (navigator.platform.indexOf("iPad") != -1);
@@ -1071,53 +1097,53 @@ google.maps.event.addDomListener(window, 'load', init);
 		function submitForm() {
 			spinner.style.display = 'block';
 			responseMessage.style.display = 'none';
-		
+
 			var formData = new FormData(form);
 			formData.append('attending', form.querySelector('input[name="attending"]:checked').value);
-		
+
 			// Add guest information
 			var guestFields = form.querySelectorAll('.guest-fields');
-			guestFields.forEach(function(field, index) {
+			guestFields.forEach(function (field, index) {
 				var guestIndex = index + 1;
 				formData.append('guest-name-' + guestIndex, field.querySelector('[name^="guest-name-"]').value);
 				formData.append('guest-intolerances-' + guestIndex, field.querySelector('[name^="guest-intolerances-"]').value);
 				formData.append('guest_is_kid_' + guestIndex, field.querySelector('[name^="guest-is-kid-"]').checked ? 'on' : 'off');
 			});
-		
+
 			fetch('https://script.google.com/macros/s/AKfycbyeBF_baU98qX7dfZiCWkf2EHczJsSi_xP74WXjMIELOAt8qnvb0bvEIKPnT1RxpXeR/exec', {
 				method: 'POST',
 				mode: 'no-cors',
 				body: formData
 			})
-			.then(response => {
-				showResponseMessage('success', 'Thank You!', 'Your RSVP has been successfully submitted. We look forward to celebrating with you!');
-			})
-			.catch(error => {
-				console.error('Error:', error);
-				showResponseMessage('error', 'Oops!', 'There was an error submitting the form. Please try again or contact us directly.');
-			})
-			.finally(() => {
-				spinner.style.display = 'none';
-				form.reset();
-				additionalGuestsContainer.innerHTML = '';
-				guestCount = 0;
-				addGuestButton.style.display = 'block';
-				scrollToElement(responseMessage);
-			});
+				.then(response => {
+					showResponseMessage('success', 'Thank You!', 'Your RSVP has been successfully submitted. We look forward to celebrating with you!');
+				})
+				.catch(error => {
+					console.error('Error:', error);
+					showResponseMessage('error', 'Oops!', 'There was an error submitting the form. Please try again or contact us directly.');
+				})
+				.finally(() => {
+					spinner.style.display = 'none';
+					form.reset();
+					additionalGuestsContainer.innerHTML = '';
+					guestCount = 0;
+					addGuestButton.style.display = 'block';
+					scrollToElement(responseMessage);
+				});
 		}
-		
+
 		function showResponseMessage(type, title, message) {
 			responseMessage.className = 'form-response-message ' + type + ' animated';
 			responseMessage.querySelector('.response-title').textContent = title;
 			responseMessage.querySelector('.response-text').textContent = message;
 			responseMessage.style.display = 'block';
 		}
-		
+
 		function scrollToElement(element) {
-			element.scrollIntoView({behavior: 'smooth', block: 'center'});
+			element.scrollIntoView({ behavior: 'smooth', block: 'center' });
 		}
 
-			
+
 	}
 
 	var translations = {};
@@ -1207,6 +1233,27 @@ google.maps.event.addDomListener(window, 'load', init);
 				initializeRSVPForm();
 			})
 			.catch(error => console.error('Error loading form:', error));
+
+		// RSVP link smooth scroll
+		$('.rsvp-link').on('click', function (e) {
+			e.preventDefault();
+			var rsvpForm = document.querySelector('.rsvp-form-container');
+			if (rsvpForm) {
+				smoothScroll('.rsvp-form-container', 1000);
+			} else {
+				// If the form doesn't exist on this page, redirect to the page with the form
+				window.location.href = 'index.html#rsvp';
+			}
+		});
+
+		// Handle RSVP hash in URL
+		if (window.location.hash === '#rsvp') {
+			setTimeout(function () {
+				smoothScroll('.rsvp-form-container', 1000);
+			}, 500); // Small delay to ensure the page is fully loaded
+		}
+
+
 	});
 
 }());
