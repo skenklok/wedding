@@ -1,69 +1,49 @@
 {
-  "page": {
-    "title": "Γάμος M&M — Λεπτομέρειες"
-  },
   "section": {
-    "weddingTitle": "Ο Γάμος",
-    "names": "Μάρκος & Μυρτώ",
+    "weddingTitle": "The Wedding",
+    "names": "Marco & Myrto",
     "weddingDate": "28.06.2025"
   },
   "navigation": {
-    "title": "Γάμος M&M",
-    "home": "Αρχική",
-    "ourstory": "Η Ιστορία μας",
-    "details": "Λεπτομέρειες",
-    "gallery": "Γκαλερί"
+    "title": "M&M Wedding",
+    "home": "Home",
+    "ourstory": "Our Story",
+    "details": "Details",
+    "gallery": "Gallery"
+  },
+  "couple": {
+    "groomName": "Marco",
+    "brideName": "Myrto",
+    "heading": "Are Getting Married",
+    "details": "on Jun 28, 2025 — London, UK"
   },
   "whenwhere": {
-    "title": "Πότε & Πού",
-    "mainTitle": "Γαμήλια Τελετή, Δεξίωση & Πάρτι",
-    "location": "Trafalgar Tavern, Greenwich, SE10 09W",
-    "ceremonyTitle": "Η Τελετή",
-    "ceremonyDesc": "Ελάτε μαζί μας καθώς ξεκινάμε το ταξίδι μας με μια πολιτική τελετή στις 12 το μεσημέρι στο γοητευτικό Trafalgar Tavern.",
-    "mealTitle": "Γεύμα",
-    "mealDesc": "Μετά την τελετή, θα συγκεντρωθούμε στην τραπεζαρία για ένα νόστιμο γεύμα που θα μας προετοιμάσει για τους εορτασμούς.",
-    "partyTitle": "Πάρτι",
-    "partyDesc": "Αφού απολαύσουμε το γεύμα μας, ο εορτασμός θα συνεχιστεί με ένα ζωηρό πάρτι που θα διαρκέσει μέχρι αργά.",
-    "venueLove": "Ερωτευτήκαμε το Trafalgar Tavern όχι μόνο για την πλούσια ιστορία του, αλλά για την άνετη ατμόσφαιρά του και την εκπληκτική θέα στον ποταμό. Βρίσκεται στην όμορφη περιοχή του Greenwich και είναι το τέλειο μέρος για την ξεχωριστή μας μέρα.",
-    "hope": "Ελπίζουμε να μπορέσετε να παρευρεθείτε και ανυπομονούμε να γιορτάσουμε την αγάπη μας μαζί σας."
-  },
-  "faq": {
-    "title": "Συχνές Ερωτήσεις",
-    "travelTitle": "Ταξίδι από την Ιταλία ή την Ελλάδα",
-    "travelDesc": "Εάν ταξιδεύετε από την Ελλάδα ή την Ιταλία, σας συνιστούμε να πετάξετε σε ένα από τα ακόλουθα αεροδρόμια:",
-    "lcyDesc": "Το πλησιέστερο αεροδρόμιο στο Greenwich, περίπου 30 λεπτά με τα μέσα μαζικής μεταφοράς.",
-    "lhrDesc": "Ένας μεγάλος διεθνής κόμβος με εξαιρετικές συνδέσεις με το κέντρο του Λονδίνου.",
-    "lgwDesc": "Ένα άλλο μεγάλο αεροδρόμιο με καλές συνδέσεις μεταφοράς προς το κέντρο του Λονδίνου.",
-    "stnDesc": "Ακόμη ένα μεγάλο αεροδρόμιο με καλές συνδέσεις μεταφοράς προς το κέντρο του Λονδίνου.",
-    "accommodationTitle": "Επιλογές Διαμονής",
-    "accommodationDesc": "Έχουμε μερικές προτάσεις διαμονής για να κάνουμε τη διαμονή σας άνετη και ευχάριστη:",
-    "ibisDesc": "Μια οικονομική επιλογή που βρίσκεται σε μικρή απόσταση με τα πόδια από το Trafalgar Tavern.",
-    "novotelDesc": "Μια επιλογή μεσαίας κατηγορίας κοντά.",
-    "hiltonDesc": "Έχουμε κανονίσει έκπτωση για τους καλεσμένους μας σε αυτό το ξενοδοχείο στο Deptford, το οποίο είναι ένα γρήγορο ταξίδι προς το Greenwich.",
-    "radissonDesc": "Μια πολυτελής επιλογή με εύκολη πρόσβαση στο Greenwich.",
-    "moreInfo": "Περισσότερες Πληροφορίες",
-    "transportTitle": "Πώς να φτάσετε στο Trafalgar Tavern",
-    "transportDesc": "Το Trafalgar Tavern είναι καλά συνδεδεμένο με διάφορα μέσα μεταφοράς:",
-    "dlrDesc": "Ο πλησιέστερος σταθμός DLR είναι το Cutty Sark για το Maritime Greenwich, που είναι σε μικρή απόσταση με τα πόδια από το παμπ. Μπορείτε εύκολα να συνδεθείτε με το DLR από το Canary Wharf, που βρίσκεται στη γραμμή Jubilee.",
-    "boatDesc": "Για μια γραφική διαδρομή, πάρτε το Uber Boat από το κέντρο του Λονδίνου (π.χ. Westminster ή North Greenwich) απευθείας στο Greenwich Pier, που είναι σε ευχάριστη απόσταση με τα πόδια από την ταβέρνα.",
-    "publicTransportDesc": "Λεωφορεία και τρένα εξυπηρετούν επίσης καλά την περιοχή, με συχνά δρομολόγια προς και από το κέντρο του Λονδίνου.",
-    "appsTitle": "Εφαρμογές Μεταφοράς",
-    "appsDesc": "Για να σας βοηθήσουμε να περιηγηθείτε στο Λονδίνο, εδώ είναι μερικές χρήσιμες εφαρμογές μεταφοράς:",
-    "taxiTitle": "Υπηρεσίες Ταξί",
-    "taxiDesc": "Για βολικές μετακινήσεις στο Λονδίνο, σκεφτείτε να χρησιμοποιήσετε αυτές τις υπηρεσίες ταξί:"
+    "ceremonyTitle": "Wedding Ceremony",
+    "ceremonyTime": "Saturday, June 28, 2025, 12.00 PM @ Trafalgar Tavern",
+    "ceremonyDesc": "Join us as we begin our journey together with a civil wedding ceremony at 12 noon at the charming Trafalgar Tavern",
+    "partyTitle": "Wedding Party",
+    "partyTime": "Saturday, June 28, 2025, 14.00 PM @ Trafalgar Tavern",
+    "partyDesc": "We are excited to invite you to join us for our special day at the Trafalgar Tavern! Here are the details:\n\n- Ceremony: The celebration begins at 12 PM in the pub, where we will exchange our vows.\n\n- Meal: After the ceremony, we will enjoy a delightful meal with stunning views of the Thames.\n\n- Reception: Once we've savored the meal, it's time to party, dancing and enjoying the bar.\n\nWe can't wait to share this unforgettable day with you!",
+    "logisticTitle": "Wedding Logistic",
+    "logisticSubtitle": "Where to get to the Trafalgar",
+    "logisticDesc": "Travel from Italy or Greece:\n\nFor our guests traveling from Athens, Greece, or Sardinia, Italy, we recommend flying into one of the following airports:\n\n- London City Airport (LCY): The closest airport to Greenwich, about 30 minutes away by public transport.\n- Heathrow Airport (LHR): A major international hub with excellent connections to central London.\n- Gatwick Airport (LGW): Another major airport with good transport links to central London.\n\nAccommodation Options:\n\nWe have a few accommodation suggestions to make your stay comfortable and enjoyable:\n\n1. Ibis London Greenwich: A budget-friendly option located just a short walk from the Trafalgar Tavern. (https://all.accor.com/hotel/3146/index.en.shtml)\n2. Novotel London Greenwich: A mid-range option nearby. (https://all.accor.com/hotel/3476/index.en.shtml)\n3. Hilton London Canary Wharf: We have arranged a discount for our guests at this hotel in Deptford, which is a quick journey to Greenwich. (https://www.hilton.com/en/hotels/loncwhi-hilton-london-canary-wharf/)\n4. Radisson Blu Edwardian, New Providence Wharf: An upscale option with easy access to Greenwich. (https://www.radissonhotels.com/en-us/hotels/radisson-blu-edwardian-london-new-providence-wharf)\n\nGetting to the Trafalgar Tavern:\n\nThe Trafalgar Tavern is well-connected by various modes of transport:\n\n1. DLR (Docklands Light Railway): The nearest DLR station is Cutty Sark for Maritime Greenwich, which is a short walk from the pub. You can easily connect to the DLR from Canary Wharf, which is on the Jubilee Line.\n2. Uber Boat by Thames Clippers: For a scenic route, take the Uber Boat from central London (e.g., Westminster or North Greenwich) directly to Greenwich Pier, which is a pleasant stroll away from the tavern. (https://www.thamesclippers.com/)\n3. Public Transport: Buses and trains also serve the area well, with frequent services to and from central London.\n\nTransport Apps:\n\nTo help you navigate London, here are some useful transport apps:\n\n1. Citymapper: (https://citymapper.com/london)\n2. Google Maps: (https://maps.google.com)\n3. TfL Go (Transport for London's official app): (https://tfl.gov.uk/maps_/tfl-go)\n\nTaxi Services:\n\nFor convenient travel around London, consider using these taxi services:\n\n1. Gett: (https://www.gett.com/uk/)\n2. Uber: (https://www.uber.com/gb/en/)\n3. FREE NOW: (https://www.free-now.com/uk/)\n\nWe hope these details help you plan your trip and make the most of your time in Greenwich. We can't wait to celebrate with you at the Trafalgar Tavern!",
+    "giftTitle": "No Gift Policy",
+    "giftDesc": "We are truly grateful for your presence on our special day. Your love and support are the greatest gifts we could ask for. Please, no gifts—just join us in celebrating our union"
   },
   "rsvp": {
-    "heading": "Θα Παρευρεθείτε;",
-    "instructions": "Παρακαλώ συμπληρώστε τη φόρμα για να μας ενημερώσετε ότι θα παρευρεθείτε. Ευχαριστούμε.",
-    "nameLabel": "Όνομα",
-    "namePlaceholder": "Το όνομά σας",
+    "heading": "Are You Attending?",
+    "instructions": "Please fill up the form to notify us that you're attending. Thanks.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your Name",
+    "adultsLabel": "Number of Adults",
+    "adultsPlaceholder": "How many adults?",
     "emailLabel": "Email",
-    "emailPlaceholder": "Το email σας",
-    "submit": "Υποβολή"
-  },
-  "footer": {
-    "rightsReserved": "Όλα τα Δικαιώματα Διατηρούνται.",
-    "designedBy": "Σχεδιασμός από",
-    "images": "Εικόνες:"
+    "emailPlaceholder": "Your Email",
+    "kidsLabel": "Number of Kids",
+    "kidsPlaceholder": "How many kids?",
+    "allergiesLabel": "Any Allergies",
+    "allergiesPlaceholder": "Any allergies we should know about?",
+    "attending": "Are you able to join us?",
+    "submit": "Submit"
   }
 }
