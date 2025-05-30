@@ -1488,3 +1488,16 @@ body.fh5co-offcanvas #fh5co-page {
 .form-response-message.animated {
   animation: fadeIn 0.5s ease-out;
 }
+
+/* Timeline Image Custom Style */
+.timeline-image {
+  text-align: center;
+  margin: 40px 0 40px 0;
+}
+.timeline-image img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
